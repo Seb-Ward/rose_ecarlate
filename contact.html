@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>contact</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="magasin de vente de fleur page contact.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+    <h1>Un article vous plaît? ou vous souhaitez être contacté? Rien de plus simple. <br> 
+        Ecrivez-nous un petit message et nous vous recontacterons.</h1>
+    <br>
+    </header>
+    <main class="main"> 
+    <form action="Nous contacter"></form>
+    <fieldset>
+        <legend>Nous contacter</legend>
+        <div>
+            <label for="nameinput">Nom et prénom</label>
+            <input type="text" name="firstname&lastname" id="nameinput" required>
+        </div>
+        <div>
+            <input type="radio" name="sexe" id="feminin">
+            <label for="feminin">Féminin </label>
+            
+        </div>
+        <div>
+            <input type="radio" name="sexe" id="masculin">
+            <label for="masculin">Masculin </label>
+        </div>
+        <br>
+        <div>
+            <label for="phonenbinput">Numéro de téléphone</label>
+            <input type="text" name="phonenbinput" id="phonenbinput" required>
+        </div>
+        <br>
+        <div>
+            <label for="emailinput">e-mail</label>
+            <input type="text" name="email" id="emailinput" placeholder="contact@demo.fr" required>
+        </div>
+        <br>
+        <div>
+            <label for="message"></label>
+            <textarea name="message" id="message" cols="40" rows="20" placeholder="Votre message"></textarea>
+        </div>
+        <div>
+            <label id="Envoyez moi des promos">Envoyez moi des promos</label>
+            <select name="Envoyez moi des promos" id="Envoyez moi des promos">
+             <option>Oui</option>
+             <option>Non</option>
+            </select>
+        </div>
+        <div>
+        <label><input type="checkbox" name="cgu" checked>J'accepte les conditions d'utilisation</label>
+        </div>
+        <br>
+            <input type="submit" valeur= "Envoyer un email">
+    </fieldset>
+    <br>
+    <br>
+    <p><a href="boutique.html">retour à la boutique</a></p>
+    <p> <a href="index.html">retour à la page d'accueil</a></p>
+    <h3>Emplacement de la boutique</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7603.233548009256!2d7.098956078256103!3d43.58335071128549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdd54f1e25a7f5%3A0xe9722c4805cfc145!2s9%20Parc%20des%20Oliviers%2C%2006600%20Antibes%2C%20France!5e0!3m2!1sfr!2suk!4v1641134106733!5m2!1sfr!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </main> 
+    <footer class="footer">
+        <p>Copyrights 2022</p>
+    </footer>
+</body>
+</html>
