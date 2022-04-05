@@ -42,7 +42,6 @@ if(isset($_SESSION['user'])){
         </div>
 
         <input type="submit" value="Connexion">	
-        <input type="submit" value="Déconnexion"/>
         </fieldset>
         </form>
     </main>
