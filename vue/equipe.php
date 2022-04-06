@@ -18,7 +18,7 @@ if(isset($_SESSION['user'])){
     <h1 class="title-big">Rose écarlate</h1>
     <h1>Créateurs de la boutique</h1> 
     <nav class="header_nav">
-        <a href="../index.html"> Acceuil</a></li>
+        <a href="../index.php"> Acceuil</a></li>
         <a href="../vue/boutique.php"> Boutique</a></li>
         <a href="../vue/contact.php">Nous contacter</a></li>
         <a href="../vue/form_inscription_client.php">S'inscrire</a></li>

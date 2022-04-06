@@ -20,7 +20,7 @@ if(isset($_SESSION['user'])){
         Ecrivez-nous un message et nous reviendrons vers vous rapidement.</h1>
         <nav class="header_nav">
             <a href="../vue/equipe.php"> L'équipe</a></li>
-            <a href="../index.html"> Page d'acceuil</a></li>
+            <a href="../index.php"> Acceuil</a></li>
             <a href="../vue/boutique.php">La boutique</a></li>
             <a href="../vue/form_inscription_client.php">S'inscrire</a></li>
             <a href="../vue/connexion_admin.php">Se connecter</a></li>    

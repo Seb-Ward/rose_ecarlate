@@ -21,7 +21,7 @@ if(isset($_SESSION['user'])){
     <nav class="header_nav">
         <a href="../vue/equipe.php"> L'équipe</a></li>
         <a href="../vue/boutique.php">Boutique</a></li>
-        <a href="../index.html"> Acceuil</a></li>
+        <a href="../index.php"> Acceuil</a></li>
         <a href="../vue/contact.php">Nous contacter</a></li>
         <a href="../vue/connexion_admin.php">Se connecter</a></li>    
     </nav>

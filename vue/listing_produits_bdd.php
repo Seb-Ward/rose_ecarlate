@@ -23,7 +23,7 @@ die();//eviter que les robots chargent la page si on en a pas besoin
     <br>
     <h1>Liste des produits dans la base de données</h1>
         <nav class="header_nav">
-            <a href="../index.html"> Page d'acceuil</a>
+            <a href="../index.php"> Acceuil</a>
             <a href="../vue/boutique.php">La boutique</a>
             <a href="../vue/dashboard.php">Mon tableau de board</a>
             <a href="../controleur/deconnexion.php">Se déconnecter</a> 

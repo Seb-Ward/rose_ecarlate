@@ -23,7 +23,7 @@ die();//eviter que les robots chargent la page si on en a pas besoin
         <h1>Formulaire d'insertion d'un nouveau produit</h1>
         <nav class="header_nav">
             <a href="../vue/equipe.php"> L'équipe</a></li>
-            <a href="../index.html"> Page d'acceuil</a></li>
+            <a href="../index.php"> Acceuil</a></li>
             <a href="../vue/boutique.php">La boutique</a></li>
             <a href="../vue/form_inscription_client.php">S'inscrire</a></li>
             <a href="../vue/connexion_admin.php">Se connecter</a></li>    
