@@ -20,9 +20,9 @@ if(isset($_SESSION['user'])){
     <h1 class="title-big">Rose écarlate</h1>
     <h1>(Admin) Connectez-vous</h1>
     <nav class="header_nav">
-        <a href="../index.php"> Acceuil</a>
+        <a href="../index.php">Acceuil</a>
         <a href="../vue/boutique.php">Boutique</a>
-        <a href="../vue/equipe.php"> L'équipe</a>
+        <a href="../vue/equipe.php">L'équipe</a>
         <a href="../vue/contact.php">Nous contacter</a>
         <a href="../vue/form_inscription_client.php">S'inscrire</a>    
     </nav>

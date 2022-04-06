@@ -28,5 +28,5 @@ try {/* je fais mon insertion dans la bdd dans la table produit */
     exit;
 
 }
-header("Location:../vue/listing_produit_bdd.php");
+header("Location:../vue/listing_produits_bdd.php");
 

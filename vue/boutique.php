@@ -17,10 +17,10 @@ if(isset($_SESSION['user'])){
 <body>
     <header class="header">
         <h1 class="title-big">Rose écarlate</h1>
-        <h1>Produits en boutiques</h1>
+        <h1>Produits en boutique</h1>
             <nav class="header_nav">
-            <a href="../vue/equipe.php"> L'équipe</a>
-            <a href="../index.php"> Acceuil</a>
+            <a href="../vue/equipe.php">L'équipe</a>
+            <a href="../index.php">Acceuil</a>
             <a href="../vue/contact.php">Nous contacter</a>
             <a href="../vue/form_inscription_client.php">S'inscrire</a>
             <a href="../vue/connexion_admin.php">Se connecter</a>   
@@ -35,8 +35,8 @@ if(isset($_SESSION['user'])){
         FROM `produit`")->fetchObject("Produit") as $produit){
 //je fais directement la requête sql sans faire le prepare parcequ'elle va pas changer elle est fixe (elle affiche l'ensemble des question créer)
         ?>
-        <div class="element"><a href="../vue/listing_produits_bdd.php?produit_id=<?=$produit->getProduit_id()?>" target="_blank" >   
-        <img src="../assets/images/upload/image_article1.jpg" alt="Roses du cap d'antibes" width="250" height="250">
+        <div class="element"><a href="../vue/listing_produits_bdd.php?produit_id=<?=$produit->getProduit_id()?><?=$produit->getProduit_nom()?><?=$produit->getProduit_description()?><?=$produit->getProduit_prix()?>" target="_blank" >   
+        <img src="../vue/listing_produits_bdd.php?image_id=<?=$produit->getImage_id()?>" alt="Roses du cap d'antibes" width="250" height="250">
          Roses du cap d'antibes
         </a></div> 
         <?php }

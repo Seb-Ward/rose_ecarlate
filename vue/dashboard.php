@@ -22,7 +22,7 @@ die();//eviter que les robots chargent la page si on en a pas besoin
         <h1 class="title-big">Rose écarlate</h1>
         <h1>Tableau de board administrateur</h1>
         <nav class="header_nav">
-            <a href="../index.html"> Page d'acceuil</a>
+            <a href="../index.php">Page d'acceuil</a>
             <a href="../controleur/deconnexion.php">Se déconnecter</a>    
         </nav>
     </header>

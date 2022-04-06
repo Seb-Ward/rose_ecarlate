@@ -22,15 +22,12 @@ die();//eviter que les robots chargent la page si on en a pas besoin
         <h1 class="title-big">Rose écarlate</h1>
         <h1>Formulaire d'insertion d'un nouveau produit</h1>
         <nav class="header_nav">
-            <a href="../vue/equipe.php"> L'équipe</a>
-            <a href="../index.php"> Acceuil</a>
-            <a href="../vue/boutique.php">La boutique</a>
-            <a href="../vue/form_inscription_client.php">S'inscrire</a>
-            <a href="../vue/connexion_admin.php">Se connecter</a>   
+            <a href="../vue/dashboard.php">Retourner à mon tableau de board</a>
+            <a href="../controleur/deconnexion.php">Se déconnecter</a>   
         </nav>
     </header>
     <main class="main"> 
-    <form action="../controleur/ajout_produit_dbb.php" method="POST">
+    <form action="../controleur/ajout_produit_bdd.php" method="POST">
     <fieldset>
         <legend>Ajouter un nouveau produit à la boutique</legend>
         <br>

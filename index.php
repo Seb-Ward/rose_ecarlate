@@ -15,7 +15,7 @@
                 <div id="conteneur_a">
                 <nav class="header_nav">
                     <div class="element 10"><a href="vue/equipe.php"> L'équipe</a></div>
-                    <div class="element 11"><a href="vue/boutique.php"> La boutique</a></div>
+                    <div class="element 11"><a href="vue/boutique.php">Boutique</a></div>
                     <div class="element 12"><a href="vue/contact.php">Nous contacter</a></div>
                     <div class="element 13"><a href="vue/form_inscription_client.php">S'inscrire</a></div>
                     <div class="element 14"><a href="vue/connexion_admin.php">Se connecter</a> </div> 
