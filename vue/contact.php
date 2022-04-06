@@ -19,11 +19,11 @@ if(isset($_SESSION['user'])){
         <h1>Une demande particulière? N'hésitez pas! <br> 
         Ecrivez-nous un message et nous reviendrons vers vous rapidement.</h1>
         <nav class="header_nav">
-            <a href="../vue/equipe.php"> L'équipe</a></li>
-            <a href="../index.php"> Acceuil</a></li>
-            <a href="../vue/boutique.php">La boutique</a></li>
-            <a href="../vue/form_inscription_client.php">S'inscrire</a></li>
-            <a href="../vue/connexion_admin.php">Se connecter</a></li>    
+            <a href="../vue/equipe.php"> L'équipe</a>
+            <a href="../index.php"> Acceuil</a>
+            <a href="../vue/boutique.php">La boutique</a>
+            <a href="../vue/form_inscription_client.php">S'inscrire</a>
+            <a href="../vue/connexion_admin.php">Se connecter</a>    
         </nav>
     </header>
     <main class="main"> 
