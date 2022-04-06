@@ -1,16 +1,15 @@
 <?php
 class Produit{
-    private $id;
+    private $produit_id;
     private $nom;
     private $description;
     private $image;
     private $prix;
-    private $quantite;
 
-    public function getId(){
+    public function getProduit_id(){
         return $this->id;
     }
-    public function setId(int $id){
+    public function setProduit_id(int $id){
         $this->id= $id;
     }
     public function getNom(){
@@ -37,14 +36,6 @@ class Produit{
     public function setPrix(float $prix){
         $this->prix= $prix;
     }
-    public function getQuantite(){
-        return $this->quantite;
-    }
-    public function setQuantite(int $quantite){
-        $this->quantite= $quantite;
-    }
-
-
 
 }
 

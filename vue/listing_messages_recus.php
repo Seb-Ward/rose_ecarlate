@@ -1,14 +1,17 @@
 <?php
+include_once "../entity/User.php";
 session_start();
-var_dump($_SESSION);
 if(!isset($_SESSION["user"])){
 header("Location: ../vue/connexion_admin.php");
 die();//eviter que les robots chargent la page si on en a pas besoin
+}elseif($_SESSION['user']->getAdmin()!=1){//là on veut récupérer le champ admin pour voir si il est
+    header("Location: ../index.php");
+    die();
 }
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Messages ruçus</title>
+    <title>Messages reçus</title>
     <meta charset="UTF-8">
     <meta name="description" content="magasin de vente de fleur page contact.">
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -19,7 +22,7 @@ die();//eviter que les robots chargent la page si on en a pas besoin
         <h1>Liste des messages reçus.</h1>
         <nav class="header_nav">
             <a href="../vue/equipe.php"> L'équipe</a></li>
-            <a href="../index.html"> Page d'acceuil</a></li>
+            <a href="../index.html"> Acceuil</a></li>
             <a href="../vue/boutique.php">La boutique</a></li>
             <a href="../vue/form_inscription_client.php">S'inscrire</a></li>
             <a href="../controleur/deconnexion.php">Se déconnecter</a></li>    

@@ -3,10 +3,8 @@ if (!isset($_POST["produit_nom"]) || empty($_POST["produit_nom"])) { //Je vérif
     if (!isset($_POST["produit_description"]) || empty($_POST["produit_description"])) { //Je vérifie que produit_description exite ou s'il n'est pas vide.
         if (!isset($_POST["produit_prix"]) || empty($_POST["produit_prix"])) { //Je vérifie que produit_prix exite ou s'il n'est pas vide.
             
-                    header("location:./vue/form_ajout_produit.php");
-                    exit;
-                
-            
+                    header("location:../vue/form_ajout_produit.php");
+                    exit;   
         }
     }
 }
@@ -23,11 +21,12 @@ try {/* je fais mon insertion dans la bdd dans la table produit */
     if ($rs === true) { // je vérifie si ma requete a fonctionné
         $produit_id = $dbh->lastInsertId(); //récupère le dernier id que j'ai inséré dans ma bdd.
 
-
-        //var_dump($sth->errorInfo());
+    
     }
 } catch (PDOException $e) {
     echo $e->getMessage();
     exit;
+
 }
 header("Location:../vue/listing_produit_bdd.php");
+

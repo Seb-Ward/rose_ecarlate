@@ -10,10 +10,10 @@ if($user==null){
     header("Location:../vue/connexion_admin.php");
     die();  
 }
-if(password_verify($password,$user['password_user'])){
+if(password_verify($password,$user->password_user)){
     session_start();
    
-    unset($user['password_user']);
+    unset($user->password_user);
     $_SESSION['user']=$user;
     header("Location: ../vue/dashboard.php");
     die();

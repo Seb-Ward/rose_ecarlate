@@ -1,17 +1,16 @@
 <?php
 class User{
-    private $id;
+    private $user_id;
     private $nom;
     private $prenom;
     private $email;
-    private $telephone;
     private $admin;
 
     public function getId(){
-        return $this->id;
+        return $this->user_id;
     }
-    public function setId(int $id){
-        $this->id= $id;
+    public function setId(int $user_id){
+        $this->user_id= $user_id;
     }
 
     public function getNom(){
@@ -34,7 +33,12 @@ class User{
     public function setEmail(string $email){
         $this->email= $email;
     }
-
+    public function getAdmin(){
+        return $this->admin;
+    }
+    public function setAdmin(string $admin){
+        $this->admin= $admin;
+    }
 
 }
 

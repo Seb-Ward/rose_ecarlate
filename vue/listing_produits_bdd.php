@@ -20,11 +20,10 @@ if(isset($_SESSION['user'])){
     <br>
     <h1>Liste des produits dans la base de données</h1>
         <nav class="header_nav">
-            <a href="../vue/equipe.php"> L'équipe</a>
             <a href="../index.html"> Page d'acceuil</a>
             <a href="../vue/boutique.php">La boutique</a>
-            <a href="../vue/form_inscription_client.php">S'inscrire</a>
-            <a href="../vue/connexion_admin.php">Se connecter</a>    
+            <a href="../vue/dashboard.php">Mon tableau de board</a>
+            <a href="../controleur/deconnexion.php">Se déconnecter</a> 
         </nav>
     </header>
     <main class="main"> 
@@ -56,17 +55,21 @@ if(isset($_SESSION['user'])){
             <td><?=$produit["produit_description"]?></td>
             <td><?=$produit["produit_prix"]?></td>
             <td><?=$produit["image_id"]?></td>
-            <td><button><a href="../controleur/ajout_produit_dbb.php?id=<?=$produit["produit_id"]?>"><font color="green">Modifier</font></a></button></td>
-            <td><button><a href="../controleur/ajout_produit_dbb.php?id=<?=$produit["produit_id"]?>"><font color="red">Suprimer</font></a></button></td>
-            
+            <td><button><a href="../controleur/ajout_produit_bdd.php?produit_id=<?=$produit["produit_id"]?>">Modifier</a></button></td>
+            <td><button><a href="../controleur/suppression_produit.php?produit_id=<?=$produit["produit_id"]?>">Suprimer</a></button></td>
         </tr>
-        <?php }
         
+
+        <?php }
+         
         ?>
        
         </tbody>
     </table>
-        </div>
+   
+    <button><a href="../vue/form_ajout_produit.php">Ajouter un nouveau produit</a></button>
+    </div>
+    
     </main> 
     <footer class="footer">
         <p>Copyrights 2022</p>

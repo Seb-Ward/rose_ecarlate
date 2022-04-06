@@ -180,6 +180,15 @@ tr :nth-child(1n)
     flex-shrink: 1;
     
 }
+#ajout
+{
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px blue;
+    background-color: blue;  
+    color: white;   
+}
+
 .footer{
     background: lightslategray;
     padding: 10px 20px;
