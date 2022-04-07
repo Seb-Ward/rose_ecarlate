@@ -1,12 +1,15 @@
 <?php
 session_start();
 //if(isset($_SESSION['user'])){
-//var_dump($_SESSION ['user']);
 //}
-if(!isset($_SESSION["user"])){//si le user session n'est pas existant
-header("Location: ../vue/connexion_admin.php");
-die();//eviter que les robots chargent la page si on en a pas besoin
-}
+//if(!isset($_SESSION["user"])){//si le user session n'est pas existant
+//header("Location: ../vue/connexion_admin.php");
+//die();//eviter que les robots chargent la page si on en a pas besoin
+//}
+//if($_SESSION['user']->getAdmin()!=1){//là on veut récupérer le champ admin pour voir si il est
+    //header("Location: ../index.php");
+    //die();
+//}
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +50,7 @@ die();//eviter que les robots chargent la page si on en a pas besoin
             <?php  
             require_once "../includes/connexion.php";
         foreach($dbh->query("SELECT * 
-        FROM produit") as $produit){
+        FROM produit INNER JOIN `image` ON produit.image_id=`image`.image_id")as $produit){
 //je fais directement la requête sql sans faire le prepare parcequ'elle va pas changer elle est fixe (elle affiche l'ensemble des question créer)
         ?>
         <tr>
@@ -55,8 +58,8 @@ die();//eviter que les robots chargent la page si on en a pas besoin
             <td><?=$produit["produit_nom"]?></td>
             <td><?=$produit["produit_description"]?></td>
             <td><?=$produit["produit_prix"]?></td>
-            <td><?=$produit["image_id"]?></td>
-            <td><button><a href="../controleur/ajout_produit_bdd.php?produit_id=<?=$produit["produit_id"]?>">Modifier</a></button></td>
+            <td><?=$produit["image_bin"]?></td>
+            <td><button><a href="../vue/form_modification_produit.php?produit_id=<?=$produit["produit_id"]?>">Modifier</a></button></td>
             <td><button><a href="../controleur/suppression_produit.php?produit_id=<?=$produit["produit_id"]?>">Suprimer</a></button></td>
         </tr>
         

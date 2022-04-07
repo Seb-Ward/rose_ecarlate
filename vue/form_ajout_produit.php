@@ -1,11 +1,20 @@
 <?php
-session_start();
+//session_start();
 //if(isset($_SESSION['user'])){
 //var_dump($_SESSION ['user']);
 //}
-if(!isset($_SESSION["user"])){//si le user session n'est pas existant
+//if(!isset($_SESSION["user"])){//si le user session n'est pas existant
+//header("Location: ../vue/connexion_admin.php");
+//die();//eviter que les robots chargent la page si on en a pas besoin
+//}
+include_once "../entity/User.php";
+session_start();
+if(!isset($_SESSION["user"])){
 header("Location: ../vue/connexion_admin.php");
 die();//eviter que les robots chargent la page si on en a pas besoin
+}elseif($_SESSION['user']->getAdmin()!=1){//là on veut récupérer le champ admin pour voir si il est
+    header("Location: ../index.php");
+    die();
 }
 
 ?>
@@ -27,7 +36,7 @@ die();//eviter que les robots chargent la page si on en a pas besoin
         </nav>
     </header>
     <main class="main"> 
-    <form action="../controleur/ajout_produit_bdd.php" method="POST">
+    <form action="../controleur/ajout_produit_bdd.php" method="POST" enctype="multipart/form-data"><!--enctype utile pour pouvoir intégrer l'image dans le formulaire-->
     <fieldset>
         <legend>Ajouter un nouveau produit à la boutique</legend>
         <br>

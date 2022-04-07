@@ -32,13 +32,17 @@ if(isset($_SESSION['user'])){
         <?php  
             require_once "../includes/connexion.php";
         foreach($dbh->query("SELECT * 
-        FROM `produit`")->fetchObject("Produit") as $produit){
+        FROM `produit`")->fetchAll(PDO::FETCH_CLASS,"Produit") as $produit){
 //je fais directement la requête sql sans faire le prepare parcequ'elle va pas changer elle est fixe (elle affiche l'ensemble des question créer)
         ?>
-        <div class="element"><a href="../vue/listing_produits_bdd.php?produit_id=<?=$produit->getProduit_id()?><?=$produit->getProduit_nom()?><?=$produit->getProduit_description()?><?=$produit->getProduit_prix()?>" target="_blank" >   
+        <div class="element">
+            <a href="../vue/listing_produits_bdd.php?produit_id=<?=$produit->getProduit_id()?>" target="_blank" >
+            <h3><?=$produit->getProduit_nom()?></h3> 
+            <p><?=$produit->getProduit_description()?></p>
+            <h4><?=$produit->getProduit_prix()?> €</h4>  
         <img src="../vue/listing_produits_bdd.php?image_id=<?=$produit->getImage_id()?>" alt="Roses du cap d'antibes" width="250" height="250">
-         Roses du cap d'antibes
-        </a></div> 
+        </a>
+        </div> 
         <?php }
         
         ?>
