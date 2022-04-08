@@ -19,10 +19,11 @@ try {/* je fais mon insertion dans la bdd dans la table produit */
         $extension_fichier=$info_fichier['extension'];//on veut récupérer le champ correcpondant à l'extension de notre fichier
         $extension_autoriser=array("jpeg","jpg","png");
         if(in_array($extension_fichier, $extension_autoriser)==true){
-            $nom_fichier= $_FILES['image']['tmp_name'];
+            $nom_fichier= $_FILES['image']['tmp_name'];//Je configure ma variable $nom_fichier
+            //Je débute mon insertion
             $sql_image='INSERT INTO `image`(`image_nom`,`image_taille`, `image_type`, `image_bin`)
             VALUES(:image_nom, :image_taille, :image_type, :image_bin)';
-            $param_image=array('image_nom' => $_FILES['image']['name'],'image_taille' => $_FILES['image']['size'],'image_type' => $_FILES['image']['type'],'image_bin'=>file_get_contents($nom_fichier));
+            $param_image=array('image_nom' => $_FILES['image']['name']/*tableau à 2 dimensions*/,'image_taille' => $_FILES['image']['size'],'image_type' => $_FILES['image']['type'],/*on récupère l'image elle_même qu'on va convertir en chaine de caractère afin de l'incorporer dans la bdd, on fait appel à la fonction file_get_content*/'image_bin'=>file_get_contents($nom_fichier));
 
             $sth = $dbh->prepare($sql_image);
             $rs = $sth->execute($param_image);

@@ -38,10 +38,11 @@ if(isset($_SESSION['user'])){
         <div class="element">
             <a href="../vue/listing_produits_bdd.php?produit_id=<?=$produit->getProduit_id()?>" target="_blank" >
             <h3><?=$produit->getProduit_nom()?></h3> 
-            <p><?=$produit->getProduit_description()?></p>
+            
             <h4><?=$produit->getProduit_prix()?> €</h4>  
-        <img src="../vue/listing_produits_bdd.php?image_id=<?=$produit->getImage_id()?>" alt="Roses du cap d'antibes" width="250" height="250">
+        <img src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>" alt="<?=$produit->getProduit_nom()?> - <?=$produit->getProduit_description()?> - <?=$produit->getProduit_prix()?> €" width="250" height="250">
         </a>
+        <p><?=$produit->getProduit_description()?></p>
         </div> 
         <?php }
         

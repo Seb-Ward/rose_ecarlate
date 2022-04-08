@@ -22,7 +22,7 @@ die();//eviter que les robots chargent la page si on en a pas besoin
         <h1>Liste des messages reçus.</h1>
         <nav class="header_nav">
             <a href="../vue/dashboard.php">Retourner à mon tableau de board</a>
-            <a href="../controleur/deconnexion.php">Se déconnecter</a>    
+            <a href="../controleur/deconnexion.php">Se déconnecter</a>   
         </nav>
     </header>
     <main class="main"> 

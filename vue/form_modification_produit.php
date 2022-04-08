@@ -1,21 +1,27 @@
 <?php
-require_once "../includes/connexion.php";
+include_once "../entity/User.php";
 session_start();
-if(!isset($_SESSION["user"])){//si le user session n'est pas existant
+if(!isset($_SESSION["user"])){
 header("Location: ../vue/connexion_admin.php");
 die();//eviter que les robots chargent la page si on en a pas besoin
-
-$objet=new PDO('mysql:host=localhost;dbname=rose_ecarlate','root','');
-
-$pdoStat = $objetPdo->prepare('SELECT * FROM produit WHERE produit_id=?');
-
-$pdoStat->bindvalue(':',$_GET['produit_id'],PDO::PARAM_INT);
-
-$executeIsok = $pdoStat->execute();
-
-$produit = $pdoStat->fetch();
-var_dump($produit);
+}elseif($_SESSION['user']->getAdmin()!=1){//là on veut récupérer le champ admin pour voir si il est
+    header("Location: ../index.php");
+    die();
 }
+if(!isset($_GET['produit_id'])){
+    header("Location: ../vue/listing_produits_bdd.php");
+    die();
+}
+require_once "../includes/connexion.php";
+
+$pdoStat = $dbh->prepare('SELECT * FROM produit WHERE produit_id=?');
+
+$executeIsok = $pdoStat->execute(array($_GET['produit_id']));
+include_once "../entity/Produit.php";
+
+$produit = $pdoStat->fetchObject("Produit");
+
+//var_dump($produit);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -35,23 +41,29 @@ var_dump($produit);
         </nav>
     </header>
     <main class="main"> 
-    <form action="../controleur/modification_produit_bdd.php" method="POST">
+    <form action="../controleur/modification_produit_bdd.php" method="POST" enctype="multipart/form-data">
     <fieldset>
         <legend>Modification d'un produit dans la boutique</legend>
         <br>
         <br>
+        <input type="hidden" value="<?= $produit->getProduit_id(); ?>" name="produit_id">
+        <input type="hidden" value="<?= $produit->getImage_id(); ?>" name="image_id">
+
         <div>
             <label for="produit_nom">Nom du produit</label>
-            <input type="produit_nom" name="produit_nom" id="produit_nom"  value="<?= $produit['produit_nom']; ?>"required>
+            <input type="produit_nom" name="produit_nom" id="produit_nom"  value="<?= $produit->getProduit_nom(); ?>"required>
         </div>
         <div>
             <label for="produit_description"></label>
             <textarea name="produit_description" id="produit_description" cols="40" rows="20" 
-            placeholder="description du produit"value="<?= $produit['produit_description']; ?>"></textarea> Insertion image(s)<input type="file" name="image" id="image">
+            placeholder="description du produit"><?= $produit->getProduit_description(); ?></textarea>
+            <img src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>" alt="<?=$produit->getProduit_nom()?> - <?=$produit->getProduit_description()?> - <?=$produit->getProduit_prix()?> €" width="250" height="250"> 
+            <br>   
+            Insertion image(s)<input type="file" name="image" id="image">
         </div>
         <div>
             <label for="produit_prix">Prix ttc</label>
-            <input type="produit_prix" name="produit_prix" id="produit_prix"  value="<?= $produit['produit_prix']; ?>"required>
+            <input type="produit_prix" name="produit_prix" id="produit_prix"  value="<?= $produit->getProduit_prix();?>"required>
            
         </div>
             <input type="submit" valeur= "Enregistrer les modifications">

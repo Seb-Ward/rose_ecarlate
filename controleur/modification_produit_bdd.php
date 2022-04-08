@@ -4,8 +4,30 @@ session_start();
 if(!isset($_SESSION["user"])){//si le user session n'est pas existant
 header("Location: ../vue/connexion_admin.php");
 die();//eviter que les robots chargent la page si on en a pas besoin
+}
+require_once "../includes/connexion.php";
 
-$objet=new PDO('mysql:host=localhost;dbname=rose_ecarlate','root','');
+    if(isset($_FILES['image'])&& $_FILES['image']['error']==0){//insertion de l'image
+        if($_FILES['image']['size']<=1000000)//on vérifie la taille de notre image pour éviter que notre fichier soit trop gros
+        {
+          $info_fichier=pathinfo($_FILES['image']['name']);//le pathinfo permet de récupérer les infos relativent au fichier
+          $extension_fichier=$info_fichier['extension'];//on veut récupérer le champ correcpondant à l'extension de notre fichier
+          $extension_autoriser=array("jpeg","jpg","png");
+          if(in_array($extension_fichier, $extension_autoriser)==true){
+              $nom_fichier= $_FILES['image']['tmp_name'];//Je configure ma variable $nom_fichier
+              //Je débute mon insertion
+              $sql_image='UPDATE `image` SET image_nom=:image_nom, image_taille=:image_taille, image_type=:image_type, image_bin=:image_bin WHERE image_id=:image_id LIMIT 1' ;
+              
+              $param_image=array('image_nom' => $_FILES['image']['name']/*tableau à 2 dimensions*/,'image_taille' => $_FILES['image']['size'],'image_type' => $_FILES['image']['type'],'image_id'=>$_POST['image_id'],/*on récupère l'image elle_même qu'on va convertir en chaine de caractère afin de l'incorporer dans la bdd, on fait appel à la fonction file_get_content*/'image_bin'=>file_get_contents($nom_fichier));
+  
+              $sth = $dbh->prepare($sql_image);
+              $rs = $sth->execute($param_image);
+        
+                }
+            }
+        }
+$pdoStat = $dbh->prepare('UPDATE produit SET produit_nom=:produit_nom, produit_description=:produit_description, produit_prix=:produit_prix WHERE produit_id=:produit_id LIMIT 1');
+$pdoStat->execute(array ('produit_id'=>$_POST['produit_id'],'produit_nom'=>$_POST['produit_nom'],'produit_description'=>$_POST['produit_description'],'produit_prix'=>$_POST['produit_prix']));
 
-$pdoStat = $objetPdo->prepare('UPDATE produit SET produit_nom=:produit_nom, produit_description=:produit_description, produit_prix=:produit_prix WHERE produit_id=:? LIMIT 1');
+header("Location: ../vue/listing_produits_bdd.php");
 ?>

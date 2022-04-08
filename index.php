@@ -3,6 +3,7 @@
         <head>
             <meta charset="UTF-8">
             <title>Page d'accueil</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="description" content="La rose ecarlate est un magasin de ventes de fleurs en ligne.">
             <meta name="keywords" content="Ventes de fleurs">
             <link rel="stylesheet" href="assets/css/style.css">
@@ -12,15 +13,13 @@
             <h1 class="title-big">Rose écarlate</h1>
             <!--<img src="assets/images/logo2.png" alt="" width="100%" height="400">-->
             <h3>Offrir & décorer</h3>
-                <div id="conteneur_a">
                 <nav class="header_nav">
-                    <div class="element 10"><a href="vue/equipe.php"> L'équipe</a></div>
-                    <div class="element 11"><a href="vue/boutique.php">Boutique</a></div>
-                    <div class="element 12"><a href="vue/contact.php">Nous contacter</a></div>
-                    <div class="element 13"><a href="vue/form_inscription_client.php">S'inscrire</a></div>
-                    <div class="element 14"><a href="vue/connexion_admin.php">Se connecter</a> </div> 
+                    <a href="vue/equipe.php"> L'équipe</a></div>
+                    <a href="vue/boutique.php">Boutique</a></div>
+                    <a href="vue/contact.php">Nous contacter</a></div>
+                    <a href="vue/form_inscription_client.php">S'inscrire</a></div>
+                    <a href="vue/connexion_admin.php">Se connecter</a></div> 
                 </nav>
-            </div>
         </header>
         <main class="main">
             <h2>"La sélection de la semaine"</h2>

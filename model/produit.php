@@ -6,4 +6,8 @@ function deleteProduit($id){
     $sth->execute(array($id));
 }
 
+function getProduit($id);{
+    require_once ("../includes/connexion.php");
+    $dbh->query("SELECT * FROM produit" as $produit);
+}
 ?>
