@@ -30,9 +30,8 @@ if(isset($_SESSION['user'])){
         <div id="conteneur">   
             
         <?php  
-            require_once "../includes/connexion.php";
-        foreach($dbh->query("SELECT * 
-        FROM `produit`")->fetchAll(PDO::FETCH_CLASS,"Produit") as $produit){
+            require_once "../model/produit.php";
+        foreach(getProduit() as $produit){
 //je fais directement la requête sql sans faire le prepare parcequ'elle va pas changer elle est fixe (elle affiche l'ensemble des question créer)
         ?>
         <div class="element">

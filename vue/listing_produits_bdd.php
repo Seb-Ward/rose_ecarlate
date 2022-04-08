@@ -49,17 +49,17 @@ die();//eviter que les robots chargent la page si on en a pas besoin
             <tbody>
             <?php  
             require_once "../model/produit.php";
-        foreach($produit as ['produit_id']){
+        foreach(getProduit() as $produit){
 //je fais directement la requête sql sans faire le prepare parcequ'elle va pas changer elle est fixe (elle affiche l'ensemble des question créer)
         ?>
         <tr>
-            <td><?=$produit["produit_id"]?></td>
-            <td><?=$produit["produit_nom"]?></td>
-            <td><?=$produit["produit_description"]?></td>
-            <td><?=$produit["produit_prix"]?></td>
-            <td><img src="../controleur/export_image.php?image_id=<?=$produit["image_id"]?>" alt="" width="100" height="100"></td>
-            <td><button><a href="../vue/form_modification_produit.php?produit_id=<?=$produit["produit_id"]?>">Modifier</a></button></td>
-            <td><button><a href="../controleur/suppression_produit.php?produit_id=<?=$produit["produit_id"]?>">Suprimer</a></button></td>
+            <td><?=$produit->getProduit_id()?></td>
+            <td><?=$produit->getProduit_nom()?></td>
+            <td><?=$produit->getProduit_description()?></td>
+            <td><?=$produit->getProduit_prix()?></td>
+            <td><img src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>" alt="" width="100" height="100"></td>
+            <td><button><a href="../vue/form_modification_produit.php?produit_id=<?=$produit->getProduit_id()?>">Modifier</a></button></td>
+            <td><button><a href="../controleur/suppression_produit.php?produit_id=<?=$produit->getProduit_id()?>">Suprimer</a></button></td>
         </tr>
         
 

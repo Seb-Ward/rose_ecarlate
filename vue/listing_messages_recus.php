@@ -36,21 +36,22 @@ die();//eviter que les robots chargent la page si on en a pas besoin
                     <th>Téléphone</th>
                     <th>Message</th>
                     <th>Réponse</th>
+                    <th>Supprimer</th>
                 </tr>
             </thead>
             <tbody>
             <?php  
-            require_once "../includes/connexion.php";
-        foreach($dbh->query("SELECT * 
-        FROM `message`") as $message){
+            require_once "../model/message.php";
+        foreach(getMessage()as $message){
 //je fais directement la requête sql sans faire le prepare parcequ'elle va pas changer elle est fixe (elle affiche l'ensemble des question créer)
         ?>
         <tr>
-            <td><?=($message["message_genre_expediteur"]==0?"Mme ":"Mr ").$message["message_nom_expediteur"]?></td>
-            <td><?=$message["message_email_expediteur"]?></td>
-            <td><?=$message["message_telephone_expediteur"]?></td>
-            <td><?=$message["message_text_expediteur"]?></td>
-            <td><button><a href="mailto:<?=$message["message_email_expediteur"]?>?subject=Contact Rose-écarlate&body=Bonjour <?=($message["message_genre_expediteur"]==0?"Mme ":"Mr ").$message["message_nom_expediteur"]?>">Répondre à l'expéditeur</a></button></td>
+            <td><?=$message->getMessage_genre_expediteur()==0?"Mme ":"Mr ".$message->getMessage_nom_expediteur()?></td>
+            <td><?=$message->getMessage_email_expediteur()?></td>
+            <td><?=$message->getMessage_telephone_expediteur()?></td>
+            <td><?=$message->getMessage_text_expediteur()?></td>
+            <td><button><a href="mailto:<?=$message->getMessage_email_expediteur()?>?subject=Contact Rose-écarlate&body=Bonjour <?=$message->getMessage_genre_expediteur()==0?"Mme ":"Mr ".$message->getMessage_nom_expediteur()?>">Répondre à l'expéditeur</a></button></td>
+            <td><button><a href="../controleur/suppression_message.php?message_id=<?=$message->getMessage_id()?>">Suprimer</a></button></td>
         </tr>
         <?php }
         

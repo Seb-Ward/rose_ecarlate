@@ -21,34 +21,22 @@ try {/* je fais mon insertion dans la bdd dans la table produit */
         if(in_array($extension_fichier, $extension_autoriser)==true){
             $nom_fichier= $_FILES['image']['tmp_name'];//Je configure ma variable $nom_fichier
             //Je débute mon insertion
-            $sql_image='INSERT INTO `image`(`image_nom`,`image_taille`, `image_type`, `image_bin`)
-            VALUES(:image_nom, :image_taille, :image_type, :image_bin)';
+            include_once ("../model/image.php");
             $param_image=array('image_nom' => $_FILES['image']['name']/*tableau à 2 dimensions*/,'image_taille' => $_FILES['image']['size'],'image_type' => $_FILES['image']['type'],/*on récupère l'image elle_même qu'on va convertir en chaine de caractère afin de l'incorporer dans la bdd, on fait appel à la fonction file_get_content*/'image_bin'=>file_get_contents($nom_fichier));
 
-            $sth = $dbh->prepare($sql_image);
-            $rs = $sth->execute($param_image);
-            if ($rs === true) { // je vérifie si ma requete a fonctionné
-                $image_id = $dbh->lastInsertId(); //récupère le dernier id que j'ai inséré dans ma bdd.
-        
+            $image_id= insertImage($param_image);
             
-            }
+              //Je débute mon insertion
+            
         }
       }
     }
     
-    
-    $sql_produit = 'INSERT INTO `produit` (`produit_nom`,`produit_description`,`produit_prix`,`image_id`) 
-    VALUES(:produit_nom, :produit_description, :produit_prix, :image_id)';/*je rentre mes valeurs*/
     $param_produit = array('produit_nom' => $_POST['produit_nom'],'produit_description' => $_POST['produit_description'],'produit_prix' => $_POST['produit_prix'],'image_id'=>$image_id);
-
-
-    $sth = $dbh->prepare($sql_produit);
-    $rs = $sth->execute($param_produit);
-    if ($rs === true) { // je vérifie si ma requete a fonctionné
-        $produit_id = $dbh->lastInsertId(); //récupère le dernier id que j'ai inséré dans ma bdd.
-
+    include_once ("../model/produit.php");
+    insertProduit($param_produit);
     
-    }
+    
 } catch (PDOException $e) {
     echo $e->getMessage();
     exit;

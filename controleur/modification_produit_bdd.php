@@ -15,19 +15,19 @@ require_once "../includes/connexion.php";
           $extension_autoriser=array("jpeg","jpg","png");
           if(in_array($extension_fichier, $extension_autoriser)==true){
               $nom_fichier= $_FILES['image']['tmp_name'];//Je configure ma variable $nom_fichier
-              //Je débute mon insertion
-              $sql_image='UPDATE `image` SET image_nom=:image_nom, image_taille=:image_taille, image_type=:image_type, image_bin=:image_bin WHERE image_id=:image_id LIMIT 1' ;
               
+              include_once ("../model/image.php");
               $param_image=array('image_nom' => $_FILES['image']['name']/*tableau à 2 dimensions*/,'image_taille' => $_FILES['image']['size'],'image_type' => $_FILES['image']['type'],'image_id'=>$_POST['image_id'],/*on récupère l'image elle_même qu'on va convertir en chaine de caractère afin de l'incorporer dans la bdd, on fait appel à la fonction file_get_content*/'image_bin'=>file_get_contents($nom_fichier));
-  
-              $sth = $dbh->prepare($sql_image);
-              $rs = $sth->execute($param_image);
+              updateImage($param_image);
+              //Je débute mon insertion
+              
         
                 }
             }
         }
-$pdoStat = $dbh->prepare('UPDATE produit SET produit_nom=:produit_nom, produit_description=:produit_description, produit_prix=:produit_prix WHERE produit_id=:produit_id LIMIT 1');
-$pdoStat->execute(array ('produit_id'=>$_POST['produit_id'],'produit_nom'=>$_POST['produit_nom'],'produit_description'=>$_POST['produit_description'],'produit_prix'=>$_POST['produit_prix']));
+        include_once ("../model/produit.php");
+        $param_produit=array ('produit_id'=>$_POST['produit_id'],'produit_nom'=>$_POST['produit_nom'],'produit_description'=>$_POST['produit_description'],'produit_prix'=>$_POST['produit_prix']);
+        updateProduit($param_produit);
 
 header("Location: ../vue/listing_produits_bdd.php");
 ?>

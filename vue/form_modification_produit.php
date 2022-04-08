@@ -12,14 +12,8 @@ if(!isset($_GET['produit_id'])){
     header("Location: ../vue/listing_produits_bdd.php");
     die();
 }
-require_once "../includes/connexion.php";
-
-$pdoStat = $dbh->prepare('SELECT * FROM produit WHERE produit_id=?');
-
-$executeIsok = $pdoStat->execute(array($_GET['produit_id']));
-include_once "../entity/Produit.php";
-
-$produit = $pdoStat->fetchObject("Produit");
+require_once ("../model/produit.php");
+$produit=getProduitById($_GET['produit_id']);
 
 //var_dump($produit);
 ?>
