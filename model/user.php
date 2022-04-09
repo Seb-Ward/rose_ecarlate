@@ -1,7 +1,7 @@
 <?php
-include_once "../entity/User.php";
+include "../entity/User.php";
 function insert_user($nom,$prenom,$email,$password){
-require_once ("../includes/connexion.php");
+require ("../includes/connexion.php");
 //var_dump($dbh);
 $sth = $dbh->prepare("INSERT INTO user (nom,prenom,email,password_user)
 VALUES(:nom,:prenom,:email,:password_user)");
@@ -12,7 +12,7 @@ return $rs;
 
 }
 function getUser($email){
-    require_once ("../includes/connexion.php");
+    require ("../includes/connexion.php");
     $sth = $dbh->prepare("SELECT * FROM user WHERE email=:email");
     $param_email=array('email'=>$email);
 

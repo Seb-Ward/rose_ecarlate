@@ -1,15 +1,15 @@
 <?php
-include_once ("../entity/Image.php");
+include ("../entity/Image.php");
 
 function updateImage($param_image){
-require_once ("../includes/connexion.php");
+require ("../includes/connexion.php");
 $sql_image='UPDATE `image` SET image_nom=:image_nom, image_taille=:image_taille, image_type=:image_type, image_bin=:image_bin WHERE image_id=:image_id LIMIT 1' ; 
 $sth = $dbh->prepare($sql_image);
 $rs = $sth->execute($param_image);
 }
 
 function insertImage($param_image){
-    require_once ("../includes/connexion.php");
+    require ("../includes/connexion.php");
     $sql_image='INSERT INTO `image`(`image_nom`,`image_taille`, `image_type`, `image_bin`)
     VALUES(:image_nom, :image_taille, :image_type, :image_bin)';
     
@@ -23,7 +23,7 @@ function insertImage($param_image){
 
 
 function getImage($id){
-    require_once ("../includes/connexion.php");
+    require ("../includes/connexion.php");
     $sth=$dbh->prepare("SELECT * FROM `image` WHERE image_id=? LIMIT 1");
     $sth->execute(array($id));
     return $sth->fetchObject("Image");

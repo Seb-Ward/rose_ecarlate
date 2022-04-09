@@ -1,5 +1,5 @@
 <?php
-include_once("../entity/Produit.php");
+//include("../entity/Produit.php");
 session_start();
 if(isset($_SESSION['user'])){
 //var_dump($_SESSION ['user']);
@@ -30,7 +30,7 @@ if(isset($_SESSION['user'])){
         <div id="conteneur">   
             
         <?php  
-            require_once "../model/produit.php";
+            require "../model/produit.php";
         foreach(getProduit() as $produit){
 //je fais directement la requête sql sans faire le prepare parcequ'elle va pas changer elle est fixe (elle affiche l'ensemble des question créer)
         ?>

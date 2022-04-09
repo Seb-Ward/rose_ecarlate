@@ -1,11 +1,11 @@
 <?php
-require_once "../includes/connexion.php";
+//require_once "../includes/connexion.php";
 session_start();
 if(!isset($_SESSION["user"])){//si le user session n'est pas existant
 header("Location: ../vue/connexion_admin.php");
 die();//eviter que les robots chargent la page si on en a pas besoin
 }
-require_once "../includes/connexion.php";
+//require_once "../includes/connexion.php";
 
     if(isset($_FILES['image'])&& $_FILES['image']['error']==0){//insertion de l'image
         if($_FILES['image']['size']<=1000000)//on vérifie la taille de notre image pour éviter que notre fichier soit trop gros

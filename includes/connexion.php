@@ -1,5 +1,5 @@
 <?php
-require_once("../includes/config.php");
+require("../includes/config.php");
 $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8";
 
 try{
