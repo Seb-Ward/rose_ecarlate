@@ -1,7 +1,11 @@
 body
 {
-    background-color: lightslategray;
     margin: 0;
+}
+.icon
+{
+    fill: silver;
+    cursor: pointer;
 }
 h2
 {
@@ -38,10 +42,10 @@ tr :nth-child(1n)
 .header
 {
     background-image:url(../images/logo2.jpg);
-    width: 97%;
-    height: 100%;
+    width: 97vw;
+    height: 24vh;
     padding: 100px 1px;
-    margin: 46px 20px;
+    margin: 20px 20px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -49,17 +53,39 @@ tr :nth-child(1n)
 }
 .header_nav
 {
+    background-color: white;
+    padding: 10px ;
+    display: flex;
+    justify-content: right;
+    align-items: top;
     margin: 20px 0;
-    padding: 7px 7px;
+    position: relative;
+    
 }
-.header_nav a
-{
-    padding: 7px 98px;
-    background: lightgray;
+.header_nav input, .nav_menu{
+    display: none;
+}
+[id^=btn]:checked + ul{
+    display: block;
+}
+.nav_menu{
+    position: absolute;
+    background-color: silver;
+    top: 50px;
+    right: 0px;   
+}
+.nav_item a{
+color: white;
+text-decoration: none;
+line-height: 25px;
+font-size: 1.2rem;
+}
+.nav_menu a:hover{
+    font-weight: bold;
 }
 .main
 {
-    background: gainsboro;
+    background: white;
     padding: 10px 20px;
 }
 #conteneur
@@ -81,6 +107,9 @@ tr :nth-child(1n)
 .element
 {
     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
 }
 .element:nth-child(1)
 {

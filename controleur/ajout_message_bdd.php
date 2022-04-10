@@ -1,5 +1,5 @@
 <?php
-if (!isset($_POST["message_nom_expediteur"]) || empty($_POST["message_nom_expediteur"])  || !isset($_POST["message_telephone_expediteur"]) || empty($_POST["message_telephone_expediteur"]) || !isset($_POST["message_text_expediteur"]) || empty($_POST["message_text_expediteur"])) { 
+if (!isset($_POST["message_nom_expediteur"]) || empty($_POST["message_nom_expediteur"])  || !isset($_POST["message_telephone_expediteur"]) || empty($_POST["message_telephone_expediteur"]) || !isset($_POST["message_text_expediteur"]) || empty($_POST["message_text_expediteur"])) { //Here I check that my filing-in gaps are existing and are not empty otherwise I redirect towards my header.
     
         
              
@@ -12,11 +12,11 @@ if (!isset($_POST["message_nom_expediteur"]) || empty($_POST["message_nom_expedi
 }
 
 require_once("../includes/connexion.php");
-try {/* je fais mon insertion dans la bdd dans la table message*/
+try {//Here i do my insert in my data base
 
-    require_once ("../model/message.php");
+    require_once ("../model/message.php");//here I 
     if(isset($_POST['message_genre_feminin_expediteur'])){
-        $genre=0;
+        $genre=0;//here I manage my "genre if it's a female or a male
     }else{
         $genre=1;
     }

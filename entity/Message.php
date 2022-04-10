@@ -1,6 +1,6 @@
 <?php
-class Message{
-    private $message_id;
+class Message{//Name of my class
+    private $message_id;//I define propreties who will define my objet
     private $message_nom_expediteur;
     private $message_genre_expediteur;
     private $message_email_expediteur;
@@ -14,7 +14,6 @@ class Message{
     public function setMessage_id(int $message_id){
         $this->message_id= $message_id;
     }
-
     public function getMessage_nom_expediteur(){
         return $this->message_nom_expediteur;
     }
