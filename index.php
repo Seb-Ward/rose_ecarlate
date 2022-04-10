@@ -48,35 +48,32 @@
             <h2>"La sélection de la semaine"</h2>
             <div id="conteneur">
                 <div class="element 1"><a href="produits/aricle1.html" target="_blank">
-                <img src="assets/images/upload/image_article1.jpg"alt="" width="200" height="200">
-                    Article 1
+                <img src="assets/images/upload/bouquet_1.jpg"alt="" width="200" height="200">
                 </a></div>
 
                 <div class="element 2"><a href="produits/article3.html" target="_blank">
-                <img src="assets/images/upload/image_article3.jpg"alt="" width="200" height="200">
-                    Article 3
+                <img src="assets/images/upload/bouquet_2.jpg"alt="" width="200" height="200">
                 </a></div>
 
                 <div class="element 3"><a href="produits/article7.html" target="_blank">
-                <img src="assets/images/upload/image_article4.jpg"alt="" width="200" height="200">
-                    Article 7
+                <img src="assets/images/upload/bouquet_3.jpg"alt="" width="200" height="200">
                 </a></div>
             </div>
             <h2>"Nos meilleurs ventes"</h2>
             <div id="conteneur_b">
                 <div class="element 4"><a href="produits/article2.html" target="_blank">    
-                <img src="assets/images/upload/image_article2.jpg" alt="" width="200" height="200">
-                    Article 2
+                <img src="assets/images/upload/bouquet_4.jpg" alt="" width="200" height="200">
+                  
                 </a></div>
 
                 <div class="element 5"><a href="produits/article4.html" target="_blank">  
-                <img src="assets/images/upload/image_article4.jpg" alt="" width="200" height="200">
-                    Article 4
+                <img src="assets/images/upload/bouquet_5.jpg" alt="" width="200" height="200">
+                   
                 </a></div>
 
                 <div class="element 6"><a href="produits/article6.html" target="_blank">
-                <img src="assets/images/upload/image_article6.jpg" alt="" width="200" height="200">
-                    Article 6
+                <img src="assets/images/upload/bouquet_6.jpg" alt="" width="200" height="200">
+                    
                 </a></div>
             </div>
                 <!--<h2>Notre "Blog"</h2>
