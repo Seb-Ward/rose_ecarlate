@@ -19,11 +19,31 @@ if(isset($_SESSION['user'])){
         <h1>Une demande particulière? N'hésitez pas! <br> 
         Ecrivez-nous un message et nous reviendrons vers vous rapidement.</h1>
         <nav class="header_nav">
-            <a href="../vue/equipe.php">L'équipe</a>
-            <a href="../index.php">Acceuil</a>
-            <a href="../vue/boutique.php">Boutique</a>
-            <a href="../vue/form_inscription_client.php">S'inscrire</a>
-            <a href="../vue/connexion_admin.php">Se connecter</a>    
+        <label for="btn" class="icon">
+                        <svg viewbox="0 0 100 80" width="40" height="40">
+                            <rect width="100" height="15"></rect>
+                            <rect y="35" width="100" height="15"></rect>
+                            <rect y="70" width="100" height="15"></rect>
+                        </svg>
+                    </label>
+                    <input type="checkbox" id="btn">
+                    <ul class="nav_menu">
+                    <li class="nav_item">
+                            <a href="../vue/equipe.php"> L'équipe</a>
+                        </li>
+                        <li class="nav_item">
+                        <a href="../index.php">Acceuil</a>
+                        </li>
+                        <li class="nav_item">
+                        <a href="../vue/boutique.php">Boutique</a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="../vue/form_inscription_client.php">S'inscrire</a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="../vue/connexion_admin.php">Se connecter</a> 
+                        </li>
+                    </ul>    
         </nav>
     </header>
     <main class="main"> 

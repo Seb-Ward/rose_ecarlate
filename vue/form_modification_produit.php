@@ -30,8 +30,22 @@ $produit=getProduitById($_GET['produit_id']);
         <h1 class="title-big">Rose écarlate</h1>
         <h1>Formulaire de modification d'un produit</h1>
         <nav class="header_nav">
-            <a href="../vue/dashboard.php">Retourner à mon tableau de board</a>
-            <a href="../controleur/deconnexion.php">Se déconnecter</a>   
+        <label for="btn" class="icon">
+                        <svg viewbox="0 0 100 80" width="40" height="40">
+                            <rect width="100" height="15"></rect>
+                            <rect y="35" width="100" height="15"></rect>
+                            <rect y="70" width="100" height="15"></rect>
+                        </svg>
+                    </label>
+                    <input type="checkbox" id="btn">
+                    <ul class="nav_menu">
+                        <li class="nav_item">
+                        <a href="../vue/dashboard.php">Retourner à mon tableau de board</a>
+                        </li>
+                        <li class="nav_item">
+                        <a href="../controleur/deconnexion.php">Se déconnecter</a>   
+                        </li>
+                    </ul>
         </nav>
     </header>
     <main class="main"> 

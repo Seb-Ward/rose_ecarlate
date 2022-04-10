@@ -31,8 +31,23 @@ die();//eviter que les robots chargent la page si on en a pas besoin
         <h1 class="title-big">Rose écarlate</h1>
         <h1>Tableau de board administrateur</h1>
         <nav class="header_nav">
-            <a href="../index.php">Page d'acceuil</a>
-            <a href="../controleur/deconnexion.php">Se déconnecter</a>    
+        <label for="btn" class="icon">
+                        <svg viewbox="0 0 100 80" width="40" height="40">
+                            <rect width="100" height="15"></rect>
+                            <rect y="35" width="100" height="15"></rect>
+                            <rect y="70" width="100" height="15"></rect>
+                        </svg>
+                    </label>
+                    <input type="checkbox" id="btn">
+                    <ul class="nav_menu">
+                        <li class="nav_item">
+                        <a href="../index.php">Acceuil</a>
+                        </li>
+                        <li class="nav_item">
+                        <a href="../controleur/deconnexion.php">Se déconnecter</a>  
+                        </li>
+                    </ul>   
+                
         </nav>
     </header>
     <main class="main"> 
