@@ -28,7 +28,7 @@ try {//Here i do my insert in my data base produit
         }
       }
     }
-    $param_produit = array('produit_nom' => $_POST['produit_nom'],'produit_description' => $_POST['produit_description'],'produit_prix' => $_POST['produit_prix'],'image_id'=>$image_id);
+    $param_produit = array('produit_nom' => htmlspecialchars( $_POST['produit_nom']),'produit_description' => htmlspecialchars($_POST['produit_description']),'produit_prix' => htmlspecialchars($_POST['produit_prix']),'image_id'=>$image_id);
     //Associative array with my key and my values
     include_once ("../model/produit.php");
     insertProduit($param_produit);//Thanks to my function I insert the product from my variable $param_produit

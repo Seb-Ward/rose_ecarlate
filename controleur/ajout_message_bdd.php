@@ -5,18 +5,18 @@ if (!isset($_POST["message_nom_expediteur"]) || empty($_POST["message_nom_expedi
                     exit();  
 }
 
-require_once("../includes/connexion.php");
+
 try {//Here i do my insert in my data base message
 
-    require_once ("../model/message.php");//here I 
+    require_once ("../model/message.php");// For the controleur communicates with the modele
     if(isset($_POST['message_genre_feminin_expediteur'])){
         $genre=0;//Here I manage my "genre if it's a female its=0
     }else{
         $genre=1;//Here I manage my "genre if it's a male its=1
     }
-    $param_message = array('message_nom_expediteur' => $_POST['message_nom_expediteur'],'message_genre_expediteur' => $genre,'message_email_expediteur' => $_POST['message_email_expediteur'],'message_telephone_expediteur' => $_POST['message_telephone_expediteur'],'message_text_expediteur' => $_POST['message_text_expediteur']);//Associative array with my key and my values
+    $param_message = array('message_nom_expediteur' => htmlspecialchars ($_POST['message_nom_expediteur']),'message_genre_expediteur' => $genre,'message_email_expediteur' => htmlspecialchars($_POST['message_email_expediteur']),'message_telephone_expediteur' => htmlspecialchars($_POST['message_telephone_expediteur']),'message_text_expediteur' =>htmlspecialchars ($_POST['message_text_expediteur']));//Associative array with my key and my values
 
-    insertMessage($param_message);
+    insertMessage($param_message);//function
     
     
 } catch (PDOException $e) {

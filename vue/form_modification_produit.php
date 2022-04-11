@@ -9,11 +9,17 @@ die();//Her I avoid the robots to load my page unnecessarily
     die();
 }
 if(!isset($_GET['produit_id'])){//If the product_id doesn't exist I relocate towards my listing
-    header("Location: ../vue/listing_produits_bdd.php");
+    header("Location: ../vue/listing_produits_bdd.php");//Method GET because we don't come from a form but from a button
     die();
 }
 require_once ("../model/produit.php");
-$produit=getProduitById($_GET['produit_id']);//Here I use my function getProduitById 
+$produit_id=intval($_GET['produit_id']);
+    if($produit_id==0){
+    header("Location: ../vue/listing_produits_bdd.php");//Method GET because we don't come from a form but from a button
+    die();
+}
+$produit=getProduitById($produit_id);//Here I use my function getProduitById 
+    
 ?>
 <!DOCTYPE html>
 <html lang="fr">

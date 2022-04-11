@@ -1,18 +1,18 @@
 <?php
 include ("../entity/Produit.php");//On inclu entyity produit pour que nos requêtes puissent retourner un objet produit
-function deleteProduit($id){
+function deleteProduit($id){//here I have my function delete from the data base: produit
     require ("../includes/connexion.php");
     $sth = $dbh->prepare("DELETE FROM produit WHERE produit_id=?");//? execute va s'occuper de le changer
     $sth->execute(array($id));
 }
 
-function getProduit(){
+function getProduit(){//here I have my function select a produict from the data base: product
     require ("../includes/connexion.php");
    return $dbh->query("SELECT * FROM produit")->fetchAll(PDO::FETCH_CLASS,"Produit");
     
 }
 
-function getProduitById($id){
+function getProduitById($id){//here I have my function select a produict from the data base: product
     
     require ("../includes/connexion.php");
 

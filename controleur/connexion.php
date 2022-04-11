@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['email'])&&(isset($_POST['password']) && !empty($_POST['email'])&&!empty($_POST['password']))){//Here I check that my fillings are existing and are not empty otherwise I redirect towards my header.
-$email=$_POST['email'];//I configure my $email as $_post['email']
-$password=$_POST['password'];//I configure my $password as $_post['password']
+$email=htmlspecialchars($_POST['email']);//I configure my $email as $_post['email']
+$password=htmlspecialchars($_POST['password']);//I configure my $password as $_post['password']
 
 include_once ("../model/user.php");
 $user= getUser($email);

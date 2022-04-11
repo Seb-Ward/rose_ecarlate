@@ -2,10 +2,10 @@
 include ('../model/user.php');
 
 if(isset($_POST)&&(!empty($_POST))) {//If $_POST exist and is empty
-$nom= $_POST['nom'] ?? "";//fill in the firstname
-$prenom= $_POST['prenom'] ?? "";//fill in the lastname
-$email= $_POST['email'] ?? "";//fill in the email
-$password= $_POST['password'] ?? "";//fill in the password
+$nom= htmlspecialchars ($_POST['nom']) ?? "";//fill in the firstname
+$prenom= htmlspecialchars($_POST['prenom']) ?? "";//fill in the lastname
+$email= htmlspecialchars($_POST['email']) ?? "";//fill in the email
+$password= htmlspecialchars($_POST['password']) ?? "";//fill in the password
 if(empty($email)){//If the email is empty then redirect back to form_inscription_client.php
     header("Location: ../vue/form_inscription_client.php");
          die();

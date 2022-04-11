@@ -21,7 +21,8 @@ function insertMessage($param_message){//here I have my function to insert a new
 
     $sth = $dbh->prepare($sql_message);
     $rs = $sth->execute($param_message);
-     // je vérifie si ma requete a fonctionné
-        return $dbh->lastInsertId(); //récupère le dernier id que j'ai inséré dans ma bdd.
+    //I check that my request has gonne through
+
+        return $dbh->lastInsertId(); //Here I will return my last id inserted
 
 }
