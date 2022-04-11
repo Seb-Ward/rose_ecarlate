@@ -1,40 +1,40 @@
 <?php
-class Produit{
-    private $produit_id;
-    private $produit_nom;
-    private $produit_description;
-    private $produit_prix;
-    private $image_id;
+class Produit{//Name of my class
+    private $produit_id;//Propreties who will define my objet
+    private $produit_nom;//Propreties who will define my objet
+    private $produit_description;//Propreties who will define my objet
+    private $produit_prix;//Propreties who will define my objet
+    private $image_id;//Propreties who will define my objet
    
 
-    public function getProduit_id(){
+    public function getProduit_id(){//Function
         return $this->produit_id;
     }
-    public function setProduit_id(int $produit_id){
+    public function setProduit_id(int $produit_id){//Function + Type
         $this->produit_id= $produit_id;
     }
-    public function getProduit_nom(){
+    public function getProduit_nom(){//Function
         return $this->produit_nom;
     }
-    public function setProduit_nom(string $produit_nom){
+    public function setProduit_nom(string $produit_nom){//Function + Type
         $this->produit_nom= $produit_nom;
     }
-    public function getProduit_description(){
+    public function getProduit_description(){//Function
         return $this->produit_description;
     }
-    public function setProduit_description(string $produit_description){
+    public function setProduit_description(string $produit_description){//Function + Type
         $this->Produit_description= $produit_description;
     }
-    public function getProduit_prix(){
+    public function getProduit_prix(){//Function
         return $this->produit_prix;
     }
-    public function setProduit_prix(float $produit_prix){
+    public function setProduit_prix(float $produit_prix){//Function + Type
         $this->prix= $produit_prix;
     }
-    public function getImage_id(){
+    public function getImage_id(){//Function
         return $this->image_id;
     }
-    public function setImage_id(string $image_id){
+    public function setImage_id(string $image_id){//Function + Type
         $this->image_id= $image_id;
     }
     

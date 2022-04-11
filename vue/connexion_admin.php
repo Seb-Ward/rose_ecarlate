@@ -1,11 +1,8 @@
 <?php
 session_start();
 if(isset($_SESSION['user'])){
-//var_dump($_SESSION ['user']);
-
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -48,10 +45,10 @@ if(isset($_SESSION['user'])){
     </nav>
     </header>
     <main class="main"> 
-    <form action="../controleur/connexion.php" method= "post">
+    <form action="../controleur/connexion.php" method= "post"><!--Here we use the $_POST method-->
     <fieldset>
         <legend>Se connecter</legend>
-        <div>
+        <div><!--By this form for a user can logg in under costumer or admin--> 
             <label for="emailinput">e-mail</label>
             <input type="text" name="email" id="emailinput" placeholder="contact@demo.fr" required>
         </div>

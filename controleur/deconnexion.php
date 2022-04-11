@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-if(!isset($_SESSION["user"])){//si le user session n'est pas existant
+if(!isset($_SESSION["user"])){//I check if the user session doesn't allready exist
 header("Location: ../vue/connexion_admin.php");
-die();//eviter que les robots chargent la page si on en a pas besoin
+die();//Avoid the robot to load the page unnecessarely
 }
 
-session_destroy();
+session_destroy();//I stop the session
 header("Location: ../index.php");
 ?>

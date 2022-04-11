@@ -1,15 +1,10 @@
 <?php
 session_start();
-//if(isset($_SESSION['user'])){
-//var_dump($_SESSION ['user']);
-//}
-if(!isset($_SESSION["user"])){//si le user session n'est pas existant
+if(!isset($_SESSION["user"])){//Here we check if the user session is not already existing
 header("Location: ../vue/connexion_admin.php");
-die();//eviter que les robots chargent la page si on en a pas besoin
+die();//Avoid the robots to load the page unnecessarily
 }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -44,7 +39,7 @@ die();//eviter que les robots chargent la page si on en a pas besoin
     <main class="main"> 
         <br>
     <p><strong>Votre message a bien été envoyé.</strong><br>
-    <br>
+    <br><!--Here we have a nice message telling the user that his request has been sent out and that a reply will be sent to him shortly-->
     <em>L'équipe Rose écarlate vous contactera rapidement par mail.<br>
         En attendant n'hésiter pas à consulter nos autres produits dans la <a href="../vue/boutique.php">Boutique</a></em>
     </p>

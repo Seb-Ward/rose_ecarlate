@@ -1,18 +1,11 @@
 <?php
-//session_start();
-//if(isset($_SESSION['user'])){
-//var_dump($_SESSION ['user']);
-//}
-//if(!isset($_SESSION["user"])){//si le user session n'est pas existant
-//header("Location: ../vue/connexion_admin.php");
-//die();//eviter que les robots chargent la page si on en a pas besoin
-//}
+
 include_once "../entity/User.php";
 session_start();
 if(!isset($_SESSION["user"])){
 header("Location: ../vue/connexion_admin.php");
-die();//eviter que les robots chargent la page si on en a pas besoin
-}elseif($_SESSION['user']->getAdmin()!=1){//là on veut récupérer le champ admin pour voir si il est
+die();//Avoid Robots to charge this page if it ain't necessary
+}elseif($_SESSION['user']->getAdmin()!=1){//Here we want to recuperate the field is an admin
     header("Location: ../index.php");
     die();
 }

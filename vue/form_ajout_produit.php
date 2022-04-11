@@ -1,22 +1,13 @@
 <?php
-//session_start();
-//if(isset($_SESSION['user'])){
-//var_dump($_SESSION ['user']);
-//}
-//if(!isset($_SESSION["user"])){//si le user session n'est pas existant
-//header("Location: ../vue/connexion_admin.php");
-//die();//eviter que les robots chargent la page si on en a pas besoin
-//}
 include_once "../entity/User.php";
 session_start();
 if(!isset($_SESSION["user"])){
 header("Location: ../vue/connexion_admin.php");
-die();//eviter que les robots chargent la page si on en a pas besoin
-}elseif($_SESSION['user']->getAdmin()!=1){//là on veut récupérer le champ admin pour voir si il est
+die();//Avoid the robot to charge the page if it ain't necessary
+}elseif($_SESSION['user']->getAdmin()!=1){//Here we will recup the field user to check if he is an admin
     header("Location: ../index.php");
     die();
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -50,12 +41,12 @@ die();//eviter que les robots chargent la page si on en a pas besoin
         </nav>
     </header>
     <main class="main"> 
-    <form action="../controleur/ajout_produit_bdd.php" method="POST" enctype="multipart/form-data"><!--enctype utile pour pouvoir intégrer l'image dans le formulaire-->
+    <form action="../controleur/ajout_produit_bdd.php" method="POST" enctype="multipart/form-data"><!--on top of ussing the $_POST method we also use enctype ="multipart" to insert a picture in a form--> 
     <fieldset>
         <legend>Ajouter un nouveau produit à la boutique</legend>
         <br>
         <br>
-        <div>
+        <div><!--Here we insert a new product to the data base-->
             <label for="produit_nom">Nom du produit</label>
             <input type="produit_nom" name="produit_nom" id="produit_nom" required>
         </div>

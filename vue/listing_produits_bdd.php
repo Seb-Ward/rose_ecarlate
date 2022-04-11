@@ -1,17 +1,10 @@
 <?php
 session_start();
-//if(isset($_SESSION['user'])){
-//}
-if(!isset($_SESSION["user"])){//si le user session n'est pas existant
+if(!isset($_SESSION["user"])){//Here we check if the user session is not already existing
 header("Location: ../vue/connexion_admin.php");
-die();//eviter que les robots chargent la page si on en a pas besoin
+die();//Avoid the robots to load the page unnecessarily
 }
-//if($_SESSION['user']->getAdmin()!=1){//là on veut récupérer le champ admin pour voir si il est
-    //header("Location: ../index.php");
-    //die();
-//}
 ?>
-
 <!DOCTYPE html> 
 <html lang="fr">
 <head>
@@ -64,16 +57,16 @@ die();//eviter que les robots chargent la page si on en a pas besoin
             <?php  
             require_once "../model/produit.php";
         foreach(getProduit() as $produit){
-//je fais directement la requête sql sans faire le prepare parcequ'elle va pas changer elle est fixe (elle affiche l'ensemble des question créer)
+//Here I do a request to my data base without doing a prepare because it isn't gonna change it is solid.(She display all the questions given)
         ?>
         <tr>
-            <td><?=$produit->getProduit_id()?></td>
-            <td><?=$produit->getProduit_nom()?></td>
-            <td><?=$produit->getProduit_description()?></td>
-            <td><?=$produit->getProduit_prix()?></td>
-            <td><img src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>" alt="" width="100" height="100"></td>
-            <td><button><a href="../vue/form_modification_produit.php?produit_id=<?=$produit->getProduit_id()?>">Modifier</a></button></td>
-            <td><button><a href="../controleur/suppression_produit.php?produit_id=<?=$produit->getProduit_id()?>">Suprimer</a></button></td>
+            <td><?=$produit->getProduit_id()?></td><!--extraction of my product_id using my function-->
+            <td><?=$produit->getProduit_nom()?></td><!--extraction of my product_name using my function-->
+            <td><?=$produit->getProduit_description()?></td><!--extraction of my product_description using my function-->
+            <td><?=$produit->getProduit_prix()?></td><!--extraction of my product_price using my function-->
+            <td><img src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>" alt="" width="100" height="100"></td><!--extraction of my image & image_id using my function-->
+            <td><button><a href="../vue/form_modification_produit.php?produit_id=<?=$produit->getProduit_id()?>">Modifier</a></button></td><!--Button to modifie the product. It will take the product_id and take me to form_modification_produit.php -->
+            <td><button><a href="../controleur/suppression_produit.php?produit_id=<?=$produit->getProduit_id()?>">Suprimer</a></button></td><!--Button that will erase the product from the data base the listing and the shop with a process in suppression_produit.php -->
         </tr>
         
 
@@ -85,7 +78,7 @@ die();//eviter que les robots chargent la page si on en a pas besoin
     </table>
    
     <button><a href="../vue/form_ajout_produit.php">Ajouter un nouveau produit</a></button>
-    </div>
+    </div><!--Here I have the possibility to add a new product to the data base, the listing product and the shop. By pressing on that switch it will take me to form_ajout_produit.php-->
     
     </main> 
     <footer class="footer">

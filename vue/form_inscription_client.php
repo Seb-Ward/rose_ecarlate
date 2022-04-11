@@ -1,10 +1,8 @@
 <?php
 session_start();
 if(isset($_SESSION['user'])){
-//var_dump($_SESSION ['user']);
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -47,10 +45,10 @@ if(isset($_SESSION['user'])){
     </nav>
     </header>
     <main class="main"> 
-    <form action="../controleur/inscription.php" method= "post">
+    <form action="../controleur/inscription.php" method= "post"><!--We are using the $_POST method-->
     <fieldset>
         <legend>S'inscrire</legend>
-        <div>
+        <div><!--Here we have a form for inscription-->
             <label for="nom">Entrez votre nom</label>
             <input type="text" name="nom" id="nom" required>
         </div>

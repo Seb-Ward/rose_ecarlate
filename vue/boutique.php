@@ -1,8 +1,7 @@
 <?php
-//include("../entity/Produit.php");
-session_start();
+session_start();//Here my session starts
 if(isset($_SESSION['user'])){
-//var_dump($_SESSION ['user']);
+
 
 }
 ?>
@@ -52,7 +51,7 @@ if(isset($_SESSION['user'])){
         <?php  
             require "../model/produit.php";
         foreach(getProduit() as $produit){
-//je fais directement la requête sql sans faire le prepare parcequ'elle va pas changer elle est fixe (elle affiche l'ensemble des question créer)
+//Here I am calling my function "getProduit" je fais directement la requête sql sans faire le prepare parcequ'elle va pas changer elle est fixe (elle affiche l'ensemble des question créer)
         ?>
         <div class="element">
             <a href="../vue/listing_produits_bdd.php?produit_id=<?=$produit->getProduit_id()?>" target="_blank" >
@@ -60,7 +59,7 @@ if(isset($_SESSION['user'])){
             <h2><?=$produit->getProduit_nom()?></h2> 
             <p><?=$produit->getProduit_description()?></p>
             <h4><?=$produit->getProduit_prix()?> €</h4>  
-        
+            <!--Here I get my product specifics and my image from my data base through my function "getImage_id" and "getProduit", it's under the format of an object-->
         </div> 
         <?php }
         

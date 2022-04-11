@@ -3,8 +3,8 @@ include_once "../entity/User.php";
 session_start();
 if(!isset($_SESSION["user"])){
 header("Location: ../vue/connexion_admin.php");
-die();//eviter que les robots chargent la page si on en a pas besoin
-}elseif($_SESSION['user']->getAdmin()!=1){//là on veut récupérer le champ admin pour voir si il est
+die();//avoid the robots charging the page unnecessarily
+}elseif($_SESSION['user']->getAdmin()!=1){//Here we make sure we give acces to the admin only
     header("Location: ../index.php");
     die();
 }

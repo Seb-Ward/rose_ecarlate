@@ -1,8 +1,6 @@
 <?php
 session_start();
 if(isset($_SESSION['user'])){
-//var_dump($_SESSION ['user']);
-
 }
 ?>
 <!DOCTYPE html>
@@ -47,7 +45,7 @@ if(isset($_SESSION['user'])){
     </header>
     <main class="main">
     <p>La boutique fut crée en 1998 par "Marie et Steve", tout deux passionnés de fleurs désirant véhiculer un message avec celles-ci.</p>
-    <p>
+    <p><!--Quick presentation of the team-->
         <ul>
             <li><strong>Marie</strong><br>
                 <img src="../assets/images/marie.jpg" alt="Photo de Marie" width="275" height="225">
