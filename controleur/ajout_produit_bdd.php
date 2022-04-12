@@ -13,7 +13,7 @@ require_once("../includes/connexion.php");// Here is my connexion to my data bas
 try {//Here i do my insert in my data base produit
     $image_id=null;
     if(isset($_FILES['image'])&& $_FILES['image']['error']==0){//I check that the image exist
-      if($_FILES['image']['size']<=1000000)//We check that our Image size isn't to big
+      if($_FILES['image']['size']<=100000000)//We check that our Image size isn't to big
       {
         $info_fichier=pathinfo($_FILES['image']['name']);//The Pathinfo allows us to gather the infos relating to the file.
         $extension_fichier=$info_fichier['extension'];//We are gonna gather the fillings that belongs to our file 

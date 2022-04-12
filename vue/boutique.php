@@ -47,7 +47,6 @@ if(isset($_SESSION['user'])){
     </header>
     <main class="main"> 
         <div id="conteneur">   
-            
         <?php  
             require "../model/produit.php";
         foreach(getProduit() as $produit){
