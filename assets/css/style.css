@@ -92,7 +92,7 @@ font-size: 1.2rem;
 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 #conteneur_a{
     display: flex;

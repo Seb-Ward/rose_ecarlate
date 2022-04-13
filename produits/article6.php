@@ -40,7 +40,7 @@
             </header>
         <main class="main">
     <img src="../assets/images/upload/bouquet_6.jpg" alt="" width="400" height="400">
-    <h3>"Roses du Cap d'Antibes"</h3>
+    <h3>"Roses voluptueuses"</h3>
      <u> Composition florale:</u>
      <ul>
         <li>Roses Rouge</li>
