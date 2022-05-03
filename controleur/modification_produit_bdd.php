@@ -24,7 +24,7 @@ $image_id=intval($_POST['image_id']);//Security for the image_id like specialcha
         }
 
         include_once ("../model/produit.php");
-        $produit_id=intval($_GET['produit_id']);
+        $produit_id=intval($_POST['produit_id']);
         if($produit_id!=0){
         $param_produit=array ('produit_id'=>$produit_id,'produit_nom'=>htmlspecialchars($_POST['produit_nom']),'produit_description'=>htmlspecialchars($_POST['produit_description']),'produit_prix'=>htmlspecialchars($_POST['produit_prix']));//Associative array with my key and my values
         updateProduit($param_produit);//Thanks to my function I update the product from my variable $param_produit

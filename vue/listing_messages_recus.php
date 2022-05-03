@@ -60,11 +60,11 @@ die();//avoid the robots charging the page unnecessarily
 //je fais directement la requête sql sans faire le prepare parcequ'elle va pas changer elle est fixe (elle affiche l'ensemble des question créer)
         ?>
         <tr>
-            <td><?=$message->getMessage_genre_expediteur()==0?"Mme ":"Mr ".$message->getMessage_nom_expediteur()?></td>
+            <td><?=($message->getMessage_genre_expediteur()==0?"Mme ":"Mr ").$message->getMessage_nom_expediteur()?></td>
             <td><?=$message->getMessage_email_expediteur()?></td>
             <td><?=$message->getMessage_telephone_expediteur()?></td>
             <td><?=$message->getMessage_text_expediteur()?></td>
-            <td><button><a href="mailto:<?=$message->getMessage_email_expediteur()?>?subject=Contact Rose-écarlate&body=Bonjour <?=$message->getMessage_genre_expediteur()==0?"Mme ":"Mr ".$message->getMessage_nom_expediteur()?>">Répondre à l'expéditeur</a></button></td>
+            <td><button><a href="mailto:<?=$message->getMessage_email_expediteur()?>?subject=Contact Rose-écarlate&body=Bonjour <?=($message->getMessage_genre_expediteur()==0?"Mme ":"Mr ").$message->getMessage_nom_expediteur()?>">Répondre à l'expéditeur</a></button></td>
             <td><button><a href="../controleur/suppression_message.php?message_id=<?=$message->getMessage_id()?>">Suprimer</a></button></td>
         </tr>
         <?php }
