@@ -46,18 +46,24 @@ if(isset($_SESSION['user'])){
             </nav>
     </header>
     <main class="main"> 
-        <div id="conteneur">   
+        <div class="conteneur">   
         <?php  
             require "../model/produit.php";
         foreach(getProduit() as $produit){
 //Here I am calling my function "getProduit" je fais directement la requête sql sans faire le prepare parcequ'elle va pas changer elle est fixe (elle affiche l'ensemble des question créer)
         ?>
-        <div class="element">
-            <a href="../vue/listing_produits_bdd.php?produit_id=<?=$produit->getProduit_id()?>" target="_blank" >
-            <img src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>" alt="<?=$produit->getProduit_nom()?> - <?=$produit->getProduit_description()?> - <?=$produit->getProduit_prix()?> €" width="250" height="250"> </a>
-            <h2><?=$produit->getProduit_nom()?></h2> 
+        <div class="item_one">
+            <a href="../vue/article.php?produit_id=<?=$produit->getProduit_id()?>" target="_blank" >
+            <img src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>" alt="<?=$produit->getProduit_nom()?> - <?=$produit->getProduit_description()?> - <?=$produit->getProduit_prix()?> €" width="400" height="400"> </a>
+            <div class="item_two">
+            <h2>"<?=$produit->getProduit_nom()?>"</h2>
+            <br>
+            <br> 
             <p><?=$produit->getProduit_description()?></p>
-            <h4><?=$produit->getProduit_prix()?> €</h4>  
+            <br>
+            <br>
+            <h2><?=$produit->getProduit_prix()?> €</h2>
+            </div>  
             <!--Here I get my product specifics and my image from my data base through my function "getImage_id" and "getProduit", it's under the format of an object-->
         </div> 
         <?php }

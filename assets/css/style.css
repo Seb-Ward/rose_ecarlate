@@ -88,11 +88,28 @@ font-size: 1.2rem;
     background: white;
     padding: 10px 20px;
 }
-#conteneur
+.conteneur
 {
+    background: white;
+    height: 50vh;
+    width: 50vw;
+    padding: 0.5em;
+    margin: 25vh auto 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+}
+.item_one{
+    background: white;
+    margin:0.5em;
+    flex-grow: 1;
+}
+
+.item_two
+{
+    background: white;
+    margin:0.5em;
+    flex-grow: 1;
 }
 #conteneur_a{
     display: flex;
