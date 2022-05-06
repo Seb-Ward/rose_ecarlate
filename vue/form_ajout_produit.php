@@ -60,7 +60,14 @@ die();//Avoid the robot to charge the page if it ain't necessary
             <input type="produit_prix" name="produit_prix" id="produit_prix" required>
            
         </div>
-            <input type="submit" valeur= "enregistrer">
+        <div>
+    <input type="checkbox" id="produit_publish_accueil" name="produit_publish_accueil" >
+    </div>    
+    <div>
+    <input type="checkbox" id="produit_publish_boutique" name="produit_publish_boutique">
+    </div>            
+    <input type="submit" valeur= "enregistrer">
+    
     </fieldset>
     </form>
     </main> 

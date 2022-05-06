@@ -26,7 +26,17 @@ $image_id=intval($_POST['image_id']);//Security for the image_id like specialcha
         include_once ("../model/produit.php");
         $produit_id=intval($_POST['produit_id']);
         if($produit_id!=0){
-        $param_produit=array ('produit_id'=>$produit_id,'produit_nom'=>htmlspecialchars($_POST['produit_nom']),'produit_description'=>htmlspecialchars($_POST['produit_description']),'produit_prix'=>htmlspecialchars($_POST['produit_prix']));//Associative array with my key and my values
+            if(isset($_POST['produit_publish_accueil'])){
+                $accueil=1;
+            }else{
+                $accueil=0;
+            }
+            if(isset($_POST['produit_publish_boutique'])){
+              $boutique=1;
+            }else{
+              $boutique=0;
+            }
+        $param_produit=array ('produit_id'=>$produit_id,'produit_nom'=>htmlspecialchars($_POST['produit_nom']),'produit_description'=>htmlspecialchars($_POST['produit_description']),'produit_prix'=>htmlspecialchars($_POST['produit_prix']),'produit_publish_accueil'=>$accueil, 'produit_publish_boutique'=>$boutique);//Associative array with my key and my values
         updateProduit($param_produit);//Thanks to my function I update the product from my variable $param_produit
         }
 header("Location: ../vue/listing_produits_bdd.php");

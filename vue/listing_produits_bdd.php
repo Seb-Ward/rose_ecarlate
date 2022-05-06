@@ -48,9 +48,10 @@ die();//Avoid the robots to load the page unnecessarily
                     <th>description</th>
                     <th>prix</th>
                     <th>photos</th>
+                    <th>Publier page d'accueil</th>
+                    <th>Publier boutique</th>
                     <th>modifier</th>
                     <th>Suprimer</th>
-                    
                 </tr>
             </thead>
             <tbody>
@@ -65,6 +66,8 @@ die();//Avoid the robots to load the page unnecessarily
             <td><?=$produit->getProduit_description()?></td><!--extraction of my product_description using my function-->
             <td><?=$produit->getProduit_prix()?></td><!--extraction of my product_price using my function-->
             <td><img src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>" alt="" width="100" height="100"></td><!--extraction of my image & image_id using my function-->
+            <td><?=$produit->getProduit_publish_accueil()?></td>
+            <td><?=$produit->getProduit_publish_boutique()?></td>
             <td><button><a href="../vue/form_modification_produit.php?produit_id=<?=$produit->getProduit_id()?>">Modifier</a></button></td><!--Button to modifie the product. It will take the product_id and take me to form_modification_produit.php -->
             <td><button><a href="../controleur/suppression_produit.php?produit_id=<?=$produit->getProduit_id()?>">Suprimer</a></button></td><!--Button that will erase the product from the data base the listing and the shop with a process in suppression_produit.php -->
         </tr>

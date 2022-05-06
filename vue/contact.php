@@ -1,6 +1,12 @@
 <?php
+ require_once "../entity/User.php";
 session_start();
 if(isset($_SESSION['user'])){
+   
+
+    $user=$_SESSION['user'];
+}else{
+    $user=new User();
 }
 ?>
 <!DOCTYPE html>
@@ -46,32 +52,29 @@ if(isset($_SESSION['user'])){
     </header>
     <main class="main"> 
         <form action="../controleur/ajout_message_bdd.php" method="POST"> <!--Here we use the $_POST method-->   
-        <form>
         <legend>Nous contacter</legend>
         <div><!--With this form a user can contact the admin for special request-->
-            <label for="message_nom_expediteur">Nom</label>
-            <input type="text" name="message_nom_expediteur" id="message_nom_expediteur" required>
-        </div>
-        <div>
-            <input type="radio" name="message_genre_feminin_expediteur" id="message_genre_feminin_expediteur">
-            <label for="message_genre_feminin_expediteur">Féminin </label>
+            <label for="message_nom_expediteur">Nom*</label>
+            <input type="text" name="message_nom_expediteur" id="message_nom_expediteur" required value="<?=$user->getNom() . " " . $user->getPrenom() ?>" >
+            <input type="radio" name="message_genre_feminin_expediteur" id="message_genre_feminin_expediteur"><!-- <?php /*$user->getGenre()==0 ? "checked" : "" */?>-->
+            <label for="message_genre_feminin_expediteur">Féminin* </label>
         
-            <input type="radio" name="message_genre_masculin_expediteur" id="message_genre_masculin_expediteur">
-            <label for="message_genre_masculin_expediteur">Masculin </label>
+            <input type="radio" name="message_genre_masculin_expediteur" id="message_genre_masculin_expediteur"> <!-- <?php /*$user->getGenre()==1 ? "checked" : "" */?>-->
+            <label for="message_genre_masculin_expediteur">Masculin* </label>
         </div>
         <br>
         <div>
             <label for="message_telephone_expediteur">Numéro de téléphone</label>
-            <input type="text" name="message_telephone_expediteur" id="message_telephone_expediteur" required>
+            <input type="text" name="message_telephone_expediteur" id="message_telephone_expediteur">
         </div>
         <br>
         <div>
-            <label for="message_email_expediteur">e-mail</label>
-            <input type="text" name="message_email_expediteur" id="message_email_expediteur" placeholder="contact@demo.fr" required>
+            <label for="message_email_expediteur">e-mail*</label>
+            <input type="text" name="message_email_expediteur" id="message_email_expediteur" placeholder="contact@demo.fr" required value="<?=$user->getEmail()?>">
         </div>
         <br>
         <div>
-            <label for="message_text_expediteur"></label>
+            <label for="message_text_expediteur">Votre message*</label>
             <textarea name="message_text_expediteur" id="message_text_expediteur" cols="40" rows="20" placeholder="Votre message"></textarea>
         </div>
         

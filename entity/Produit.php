@@ -5,7 +5,9 @@ class Produit{//Name of my class
     private $produit_description;//Propreties who will define my objet
     private $produit_prix;//Propreties who will define my objet
     private $image_id;//Propreties who will define my objet
-   
+    private $produit_publish_accueil;
+    private $produit_publish_boutique;
+
 
     public function getProduit_id(){//Function
         return $this->produit_id;
@@ -37,8 +39,18 @@ class Produit{//Name of my class
     public function setImage_id(string $image_id){//Function + Type
         $this->image_id= $image_id;
     }
-    
-
+    public function getProduit_publish_accueil(){
+        return $this->produit_publish_accueil;
+    }
+    public function setProduit_publish_accueil($produit_publish_accueil){
+        $this->produit_publish_accueil= $produit_publish_accueil;
+    }
+    public function getProduit_publish_boutique(){
+        return $this->produit_publish_boutique;
+    }
+    public function setProduit_publish_boutique($produit_publish_boutique){
+        $this->produit_publish_boutique= $produit_publish_boutique;
+    }
 }
 
 

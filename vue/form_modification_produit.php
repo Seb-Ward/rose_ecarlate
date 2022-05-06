@@ -76,9 +76,14 @@ $produit=getProduitById($produit_id);//Here I use my function getProduitById
         </div>
         <div>
             <label for="produit_prix">Prix ttc</label>
-            <input type="produit_prix" name="produit_prix" id="produit_prix"  value="<?= $produit->getProduit_prix();?>"required><!--Here I extract the product_price,display it, ready for modification. I do it with my function getProduit_prix-->
-           
+            <input type="produit_prix" name="produit_prix" id="produit_prix"  value="<?= $produit->getProduit_prix();?>"required><!--Here I extract the product_price,display it, ready for modification. I do it with my function getProduit_prix-->  
         </div>
+        <div>
+    <input type="checkbox" id="produit_publish_accueil" name="produit_publish_accueil"<?=($produit->getProduit_publish_accueil()==1?"checked":"")?> >
+    </div>    
+    <div>
+    <input type="checkbox" id="produit_publish_boutique" name="produit_publish_boutique"<?=($produit->getProduit_publish_boutique()==1?"checked":"")?>>
+    </div>            
             <input type="submit" valeur= "Enregistrer les modifications">
     </fieldset>
     </form>

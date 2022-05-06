@@ -85,31 +85,28 @@ font-size: 1.2rem;
 }
 .main
 {
-    background: white;
-    padding: 10px 20px;
-}
-.conteneur
-{
-    background: white;
-    height: 50vh;
-    width: 50vw;
+    background:white;
+    height: 62vh;
+    width: 80vw;
     padding: 0.5em;
     margin: 25vh auto 0;
+
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    flex-direction: row;
 }
 .item_one{
-    background: white;
-    margin:0.5em;
-    flex-grow: 1;
-}
+    background: whitesmoke;
+    height: 60vh;
+    width: 60vw;
+    margin: 0.5em;
 
-.item_two
-{
-    background: white;
-    margin:0.5em;
-    flex-grow: 1;
+}
+.item_two{
+    background: whitesmoke;
+    height: 60vh;
+    width: 60vw;
+    margin: 0.5em;
+
 }
 #conteneur_a{
     display: flex;

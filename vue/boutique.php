@@ -49,7 +49,7 @@ if(isset($_SESSION['user'])){
         <div class="conteneur">   
         <?php  
             require "../model/produit.php";
-        foreach(getProduit() as $produit){
+        foreach(getProduitPublish_boutique() as $produit){
 //Here I am calling my function "getProduit" je fais directement la requête sql sans faire le prepare parcequ'elle va pas changer elle est fixe (elle affiche l'ensemble des question créer)
         ?>
         <div class="item_one">
