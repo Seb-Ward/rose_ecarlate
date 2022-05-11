@@ -1,7 +1,20 @@
 <?php
+require_once "../entity/User.php";
 session_start();
 if(isset($_SESSION['user'])){
+   
+
+    $user=$_SESSION['user'];
+    echo $user->getNom(); 
+    $connected=true;
+}else{
+    $user=new User();
+    $connected=false;
+
 }
+$page="equipe";
+
+?>
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -15,33 +28,8 @@ if(isset($_SESSION['user'])){
     <header class="header">
     <h1 class="title-big">Rose écarlate</h1>
     <h1>Présentation de l'équipe de fleuristes</h1> 
-    <nav class="header_nav">
-    <label for="btn" class="icon">
-                        <svg viewbox="0 0 100 80" width="40" height="40">
-                            <rect width="100" height="15"></rect>
-                            <rect y="35" width="100" height="15"></rect>
-                            <rect y="70" width="100" height="15"></rect>
-                        </svg>
-                    </label>
-                    <input type="checkbox" id="btn">
-                    <ul class="nav_menu">
-                        <li class="nav_item">
-                        <a href="../index.php">Acceuil</a>
-                        </li>
-                        <li class="nav_item">
-                        <a href="../vue/boutique.php">Boutique</a>
-                        </li>
-                        <li class="nav_item">
-                            <a href="../vue/contact.php">Nous contacter</a>
-                        </li> 
-                        <li class="nav_item">
-                            <a href="../vue/form_inscription_client.php">S'inscrire</a>
-                        </li>
-                        <li class="nav_item">
-                            <a href="../vue/connexion_admin.php">Se connecter</a> 
-                        </li>
-                    </ul>  
-    </nav>
+    <?php include_once "../vue/navigation.php";   ?>  
+
     </header>
     <main class="main">
     <p>La boutique fut crée en aout 2010, un repère pour les antibois conquits par les fleurs et les plantes.</p>
@@ -55,7 +43,6 @@ if(isset($_SESSION['user'])){
             Ce qui lui plait à Laëtitia c'est le pouvoir que les fleurs peuvent avoir sur les gens. <br> Lorsqu'elle commence à composer un bouquet dit-elle, elle ne sait jamais à quoi il va ressembler, elle l'agrémente, le faconne et à la fin il prend vie! Et provoque des coups de coeur chez nos des clients(e).
               </li>
         </ul>
-    </p>
     </main>
     <footer class="footer">
         <p>Copyrights 2022</p>

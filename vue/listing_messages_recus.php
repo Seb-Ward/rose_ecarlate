@@ -8,7 +8,12 @@ die();//avoid the robots charging the page unnecessarily
     header("Location: ../index.php");
     die();
 }
-?><!DOCTYPE html>
+$user=$_SESSION['user'];
+$page="listing_message_recus";
+$connected=true;
+
+?> 
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <title>Messages reçus</title>
@@ -20,24 +25,8 @@ die();//avoid the robots charging the page unnecessarily
     <header class="header">
         <h1 class="title-big">Rose écarlate</h1>
         <h1>Liste des messages reçus.</h1>
-        <nav class="header_nav">
-        <label for="btn" class="icon">
-                        <svg viewbox="0 0 100 80" width="40" height="40">
-                            <rect width="100" height="15"></rect>
-                            <rect y="35" width="100" height="15"></rect>
-                            <rect y="70" width="100" height="15"></rect>
-                        </svg>
-                    </label>
-                    <input type="checkbox" id="btn">
-                    <ul class="nav_menu">
-                        <li class="nav_item">
-                        <a href="../vue/dashboard.php">Retourner à mon tableau de board</a>
-                        </li>
-                        <li class="nav_item">
-                        <a href="../controleur/deconnexion.php">Se déconnecter</a>   
-                        </li>
-                    </ul>  
-        </nav>
+        <?php include_once "../vue/navigation.php";   ?>  
+
     </header>
     <main class="main"> 
     <div id="listing">
@@ -74,6 +63,9 @@ die();//avoid the robots charging the page unnecessarily
         </tbody>
     </table>
         </div>
+        <br>        
+        <a href="../controleur/deconnexion.php"><button>Se déconnecter</button></a>
+
     </main> 
     <footer class="footer">
         <p>Copyrights 2022</p>

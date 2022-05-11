@@ -85,143 +85,22 @@ font-size: 1.2rem;
 }
 .main
 {
-    background:white;
-    height: 62vh;
-    width: 80vw;
+    background: white;
+
+    
+}
+.container{
+
+    background: gray;
+    height: 50vh;
+    width: 50vw;
     padding: 0.5em;
     margin: 25vh auto 0;
-
-    display: flex;
-    flex-direction: row;
 }
-.item_one{
+.item{
     background: whitesmoke;
-    height: 60vh;
-    width: 60vw;
     margin: 0.5em;
 
-}
-.item_two{
-    background: whitesmoke;
-    height: 60vh;
-    width: 60vw;
-    margin: 0.5em;
-
-}
-#conteneur_a{
-    display: flex;
-    flex-wrap: wrap;
-}
-#conteneur_b
-{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-.element
-{
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-between;
-}
-.element:nth-child(1)
-{
-    background-color: white;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 375px;
-}
-.element:nth-child(2)
-{
-    background-color:white;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 375px;
-}
-.element:nth-child(3)
-{
-    background-color:white;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 375px;
-}
-.element:nth-child(4)
-{
-    background-color: white;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 375PX;
-}
-.element:nth-child(5)
-{
-    background-color: white;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 375PX;
-}
-.element:nth-child(6)
-{
-    background-color: white;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 375PX;
-}
-.element:nth-child(7)
-{
-    background-color: white;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 375PX;
-}
-.element:nth-child(8)
-{
-    background-color: white;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 375PX;
-}
-.element:nth-child(9)
-{
-    background-color: white;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 375PX;
-}
-.element:nth-child(10)
-{
-    background-color:  lightgray;
-    flex-grow: 1;
-    flex-shrink: 1;
-   
-}
-.element:nth-child(11)
-{
-    background-color:  lightgray;
-    flex-grow: 1;
-    flex-shrink: 1;
-    
-}
-.element:nth-child(12)
-{
-    background-color: lightgray;
-    flex-grow: 1;
-    flex-shrink: 1;
-    
-}
-.element:nth-child(13)
-{
-    background-color:  lightgray;
-    flex-grow: 1;
-    flex-shrink: 1;
- 
-}
-.element:nth-child(14)
-{
-    background-color:  lightgray;
-    flex-grow: 1;
-    flex-shrink: 1;
-    
 }
 #ajout
 {
@@ -239,8 +118,8 @@ font-size: 1.2rem;
     text-align:center;
 }
 #listing{
-    width: 95%;
-    height: 100%;
+    width: 95vw;
+    height: 100vh;
     border:solid 1px gray;
     border-radius: 20px;
     margin: 0.5%;

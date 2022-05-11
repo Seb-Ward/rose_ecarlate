@@ -9,6 +9,9 @@ die();//Avoid Robots to charge this page if it ain't necessary
     header("Location: ../index.php");
     die();
 }
+$user=$_SESSION['user'];
+$page="dashboard";
+$connected=true;
 
 ?>
 <!DOCTYPE html>
@@ -23,29 +26,11 @@ die();//Avoid Robots to charge this page if it ain't necessary
     <header class="header">
         <h1 class="title-big">Rose écarlate</h1>
         <h1>Tableau de board administrateur</h1>
-        <nav class="header_nav">
-        <label for="btn" class="icon">
-                        <svg viewbox="0 0 100 80" width="40" height="40">
-                            <rect width="100" height="15"></rect>
-                            <rect y="35" width="100" height="15"></rect>
-                            <rect y="70" width="100" height="15"></rect>
-                        </svg>
-                    </label>
-                    <input type="checkbox" id="btn">
-                    <ul class="nav_menu">
-                        <li class="nav_item">
-                        <a href="../index.php">Acceuil</a>
-                        </li>
-                        <li class="nav_item">
-                        <a href="../controleur/deconnexion.php">Se déconnecter</a>  
-                        </li>
-                    </ul>   
-                
-        </nav>
+        <?php include_once "../vue/navigation.php";   ?>  
+
     </header>
     <main class="main"> 
     <fieldset>
-        <form>
         <legend>Tableau de board de mes possibilitées.</legend>
         <br>
         <button><a href="../vue/listing_messages_recus.php">Consulter les messages reçus.</a></button>
@@ -58,8 +43,6 @@ die();//Avoid Robots to charge this page if it ain't necessary
         <br>
         <br>
         <button><a href="../vue/boutique.php">Consulter les produits en boutique</a></button>
-        <br>
-    </form>
     </fieldset>
     </main> 
     <footer class="footer">

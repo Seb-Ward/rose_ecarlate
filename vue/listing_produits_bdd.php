@@ -1,9 +1,17 @@
 <?php
+include_once "../entity/User.php";
 session_start();
-if(!isset($_SESSION["user"])){//Here we check if the user session is not already existing
+if(!isset($_SESSION["user"])){
 header("Location: ../vue/connexion_admin.php");
-die();//Avoid the robots to load the page unnecessarily
+die();//Avoid the robot to charge the page if it ain't necessary
+}elseif($_SESSION['user']->getAdmin()!=1){//Here we will recup the field user to check if he is an admin
+    header("Location: ../index.php");
+    die();
 }
+$user=$_SESSION['user'];
+$page="listing_produits_bdd";
+$connected=true;
+
 ?>
 <!DOCTYPE html> 
 <html lang="fr">
@@ -18,24 +26,8 @@ die();//Avoid the robots to load the page unnecessarily
     <h1 class="title-big">Rose écarlate</h1>
     <br>
     <h1>Liste des produits dans la base de données</h1>
-        <nav class="header_nav">
-        <label for="btn" class="icon">
-                        <svg viewbox="0 0 100 80" width="40" height="40">
-                            <rect width="100" height="15"></rect>
-                            <rect y="35" width="100" height="15"></rect>
-                            <rect y="70" width="100" height="15"></rect>
-                        </svg>
-                    </label>
-                    <input type="checkbox" id="btn">
-                    <ul class="nav_menu">
-                        <li class="nav_item">
-                        <a href="../vue/dashboard.php">Retourner à mon tableau de board</a>
-                        </li>
-                        <li class="nav_item">
-                        <a href="../controleur/deconnexion.php">Se déconnecter</a>   
-                        </li>
-                    </ul>
-        </nav>
+    <?php include_once "../vue/navigation.php";   ?>  
+
     </header>
     <main class="main"> 
     <div id="listing">
@@ -82,7 +74,9 @@ die();//Avoid the robots to load the page unnecessarily
    
     <button><a href="../vue/form_ajout_produit.php">Ajouter un nouveau produit</a></button>
     </div><!--Here I have the possibility to add a new product to the data base, the listing product and the shop. By pressing on that switch it will take me to form_ajout_produit.php-->
-    
+    <br>
+    <a href="../controleur/deconnexion.php"><button>Se déconnecter</button></a>
+
     </main> 
     <footer class="footer">
         <p>Copyrights 2022</p>

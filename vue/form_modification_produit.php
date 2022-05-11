@@ -19,7 +19,10 @@ $produit_id=intval($_GET['produit_id']);
     die();
 }
 $produit=getProduitById($produit_id);//Here I use my function getProduitById 
-    
+$user=$_SESSION['user'];
+$page="form_modification_produit";
+$connected=true;
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -33,24 +36,8 @@ $produit=getProduitById($produit_id);//Here I use my function getProduitById
     <header class="header">
         <h1 class="title-big">Rose écarlate</h1>
         <h1>Formulaire de modification d'un produit</h1>
-        <nav class="header_nav">
-        <label for="btn" class="icon">
-                        <svg viewbox="0 0 100 80" width="40" height="40">
-                            <rect width="100" height="15"></rect>
-                            <rect y="35" width="100" height="15"></rect>
-                            <rect y="70" width="100" height="15"></rect>
-                        </svg>
-                    </label>
-                    <input type="checkbox" id="btn">
-                    <ul class="nav_menu">
-                        <li class="nav_item">
-                        <a href="../vue/dashboard.php">Retourner à mon tableau de board</a>
-                        </li>
-                        <li class="nav_item">
-                        <a href="../controleur/deconnexion.php">Se déconnecter</a>   
-                        </li>
-                    </ul>
-        </nav>
+        <?php include_once "../vue/navigation.php";   ?>  
+
     </header>
     <main class="main"> 
     <form action="../controleur/modification_produit_bdd.php" method="POST" enctype="multipart/form-data"><!--Here I use the $_POST method and the enctype="multipart/form-data"-->
@@ -85,6 +72,7 @@ $produit=getProduitById($produit_id);//Here I use my function getProduitById
     <input type="checkbox" id="produit_publish_boutique" name="produit_publish_boutique"<?=($produit->getProduit_publish_boutique()==1?"checked":"")?>>
     </div>            
             <input type="submit" valeur= "Enregistrer les modifications">
+
     </fieldset>
     </form>
     </main> 

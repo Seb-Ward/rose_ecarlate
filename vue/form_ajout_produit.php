@@ -8,6 +8,9 @@ die();//Avoid the robot to charge the page if it ain't necessary
     header("Location: ../index.php");
     die();
 }
+$user=$_SESSION['user'];
+$page="form_ajout_produit";
+$connected=true;
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -21,24 +24,8 @@ die();//Avoid the robot to charge the page if it ain't necessary
     <header class="header">
         <h1 class="title-big">Rose écarlate</h1>
         <h1>Formulaire d'insertion d'un nouveau produit</h1>
-        <nav class="header_nav">
-        <label for="btn" class="icon">
-                        <svg viewbox="0 0 100 80" width="40" height="40">
-                            <rect width="100" height="15"></rect>
-                            <rect y="35" width="100" height="15"></rect>
-                            <rect y="70" width="100" height="15"></rect>
-                        </svg>
-                    </label>
-                    <input type="checkbox" id="btn">
-                    <ul class="nav_menu">
-                        <li class="nav_item">
-                        <a href="../vue/dashboard.php">Retourner à mon tableau de board</a>
-                        </li>
-                        <li class="nav_item">
-                        <a href="../controleur/deconnexion.php">Se déconnecter</a>   
-                        </li>
-                    </ul>
-        </nav>
+        <?php include_once "../vue/navigation.php";   ?>  
+
     </header>
     <main class="main"> 
     <form action="../controleur/ajout_produit_bdd.php" method="POST" enctype="multipart/form-data"><!--on top of ussing the $_POST method we also use enctype ="multipart" to insert a picture in a form--> 
@@ -67,7 +54,6 @@ die();//Avoid the robot to charge the page if it ain't necessary
     <input type="checkbox" id="produit_publish_boutique" name="produit_publish_boutique">
     </div>            
     <input type="submit" valeur= "enregistrer">
-    
     </fieldset>
     </form>
     </main> 
