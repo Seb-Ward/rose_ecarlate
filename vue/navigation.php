@@ -59,7 +59,7 @@
                         <?php } ?>
                         <?php if($page!="connexion_admin"){?>
                         <li class="nav_item">
-                            <a href="connexion_admin.php">Se connecter</a> 
+                            <a href="connexion.php">Se connecter</a> 
                         </li>
                         <?php } ?>
                         <?php

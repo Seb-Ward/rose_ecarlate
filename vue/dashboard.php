@@ -3,7 +3,7 @@
 include_once "../entity/User.php";
 session_start();
 if(!isset($_SESSION["user"])){
-header("Location: ../vue/connexion_admin.php");
+header("Location: ../vue/connexion.php");
 die();//Avoid Robots to charge this page if it ain't necessary
 }elseif($_SESSION['user']->getAdmin()!=1){//Here we want to recuperate the field is an admin
     header("Location: ../index.php");

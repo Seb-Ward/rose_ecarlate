@@ -2,7 +2,7 @@
 include_once "../entity/User.php";
 session_start();
 if(!isset($_SESSION["user"])){
-header("Location: ../vue/connexion_admin.php");
+header("Location: ../vue/connexion.php");
 die();//Avoid the robot to charge the page if it ain't necessary
 }elseif($_SESSION['user']->getAdmin()!=1){//Here we will recup the field user to check if he is an admin
     header("Location: ../index.php");

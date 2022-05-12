@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION["user"])){//I check if the user already exist
-header("Location: ../vue/connexion_admin.php");
+header("Location: ../vue/connexion.php");
 die();//I avoid that the robots load the page unnecessarily
 }
 $image_id=intval($_POST['image_id']);//Security for the image_id like specialchars
