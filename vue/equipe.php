@@ -44,8 +44,8 @@ $page="equipe";
               </li>
         </ul>
     </main>
-    <footer class="footer">
-        <p>Copyrights 2022</p>
-    </footer>  
+    
+    <?php include_once"../vue/footer.php";?>
+ 
 </body>
 </html>

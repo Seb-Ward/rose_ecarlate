@@ -9,22 +9,22 @@ die();//avoid the robots charging the page unnecessarily
     die();
 }
 $user=$_SESSION['user'];
-$page="listing_message_recus";
+$page="commandes_passees";
 $connected=true;
 
 ?> 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Messages reçus</title>
+    <title>Commandes passées</title>
     <meta charset="UTF-8">
-    <meta name="description" content="magasin de vente de fleur page contact.">
+    <meta name="description" content="description des commandes passées">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     <header class="header">
         <h1 class="title-big">Rose écarlate</h1>
-        <h1>Liste des messages reçus.</h1>
+        <h1>Listes des commandes passées</h1>
         <?php include_once "../vue/navigation.php";   ?>  
 
     </header>
@@ -34,27 +34,27 @@ $connected=true;
         <table>
             <thead>
                 <tr>
-                    <th>Nom</th>
-                    <th>Email</th>
-                    <th>Téléphone</th>
-                    <th>Message</th>
-                    <th>Réponse</th>
-                    <th>Supprimer</th>
+                    <th>ref commande</th>
+                    <th>Client</th>
+                    <th>Montant total</th>
+                    <th>Date commande</th>
+                    <th>Date envoi</th>
+                    <th>Modifier</th>
                 </tr>
             </thead>
             <tbody>
             <?php  
-            require_once "../model/message.php";
-        foreach(getMessage()as $message){
+            require_once "../model/commande.php";
+        foreach(getCommande()as $commande){
 //je fais directement la requête sql sans faire le prepare parcequ'elle va pas changer elle est fixe (elle affiche l'ensemble des question créer)
         ?>
         <tr>
-            <td><?=($message->getMessage_genre_expediteur()==0?"Mme ":"Mr ").$message->getMessage_nom_expediteur()?></td>
-            <td><?=$message->getMessage_email_expediteur()?></td>
-            <td><?=$message->getMessage_telephone_expediteur()?></td>
-            <td><?=$message->getMessage_text_expediteur()?></td>
-            <td><button><a href="mailto:<?=$message->getMessage_email_expediteur()?>?subject=Contact Rose-écarlate&body=Bonjour <?=($message->getMessage_genre_expediteur()==0?"Mme ":"Mr ").$message->getMessage_nom_expediteur()?>">Répondre à l'expéditeur</a></button></td>
-            <td><button><a href="../controleur/suppression_message.php?message_id=<?=$message->getMessage_id()?>">Suprimer</a></button></td>
+            <td><?=$commande->getCommande_ref()?></td>
+            <td><?=($commande->getUser()->getMessage_genre_expediteur()==0?"Mme ":"Mr ").$commande->getUser()->getMessage_nom_expediteur()?></td>
+            <td><?=$commande->getMontant_total()?></td>
+            <td><?=$commande->getCommande_date()?></td>
+            <td><?=$commande->getDate_envoi()?></td>
+            <td><button><a href="../vue/modification_commande.php?message_id=<?=$commande->getCommande_ref()?>">Modifier</a></button></td>
         </tr>
         <?php }
         

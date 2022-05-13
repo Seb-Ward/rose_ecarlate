@@ -4,6 +4,7 @@ class Produit{//Name of my class
     private $produit_nom;//Propreties who will define my objet
     private $produit_description;//Propreties who will define my objet
     private $produit_prix;//Propreties who will define my objet
+    private $taxe;
     private $image_id;//Propreties who will define my objet
     private $produit_publish_accueil;
     private $produit_publish_boutique;
@@ -32,6 +33,12 @@ class Produit{//Name of my class
     }
     public function setProduit_prix(float $produit_prix){//Function + Type
         $this->prix= $produit_prix;
+    }
+    public function getTaxe(){//Function
+        return $this->taxe;
+    }
+    public function setTaxe(Taxe $taxe){//Function + Type
+        $this->taxe= $taxe;
     }
     public function getImage_id(){//Function
         return $this->image_id;
