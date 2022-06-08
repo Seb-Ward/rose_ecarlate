@@ -45,7 +45,7 @@ $connected=true;
         <legend>Modification d'un produit dans la boutique</legend>
         <br>
         <br>
-        <input type="hidden" value="<?= $produit->getProduit_id(); ?>" name="produit_id"><!--extraction of the product_id using my function getProduit_id and I hidde it-->
+        <input type="hidden" value="<?= $produit->getProduit_id(); ?>" name="produit_id" id="produit_id"><!--extraction of the product_id using my function getProduit_id and I hidde it-->
         <input type="hidden" value="<?= $produit->getImage_id(); ?>" name="image_id"><!--extraction of the image_id using my function getImage_id and I hidde it-->
 
         <div>
