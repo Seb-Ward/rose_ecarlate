@@ -1,3 +1,8 @@
-<footer class="footer">
-        <p><em>Copyrights 2022</em></p>
+<footer class="blog-footer">
+        <br>
+        <br>
+        <p>
+            <em>Copyrights 2022</em>
+        </p>
+        <br>
     </footer>
