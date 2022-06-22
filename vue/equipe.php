@@ -27,27 +27,30 @@ $page="equipe";
 <body>
 <div class="container">
             <header class="py-4 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between md-4 border-bottom">
-                <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0" href="/"><img width="" height="70" src="../assets/images/logo_fcomme_fleurs.jpg" alt=""></a>
+                <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0" href="../vue/equipe.php"><img width="230" height="70" src="../assets/images/logo_fcomme_fleurs.jpg" alt=""></a>
                 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 <li>
-    <a class='nav-link px-2 link-<?= $page == 'accueil' ? "secondary" : "dark" ?>' href="accueil.php">Accueil</a>
+    <a class='nav-link px-2 link-<?= $page == 'accueil' ? "secondary" : "dark" ?>' href="../vue/accueil.php">Accueil</a>
 </li>
 <li>
-    <a class='nav-link px-2 link-<?= $page == 'boutique' ? "secondary" : "dark" ?>' href="boutique.php">Boutique</a>
+    <a class='nav-link px-2 link-<?= $page == 'boutique' ? "secondary" : "dark" ?>' href="../vue/boutique.php">Boutique</a>
 </li>
 <li>
-    <a class='nav-link px-2 link-<?= $page == 'equipe' ? "secondary" : "dark" ?>' href="equipe.php"> L'équipe</a>
+    <a class='nav-link px-2 link-<?= $page == 'equipe' ? "secondary" : "dark" ?>' href="../vue/equipe.php"> L'équipe</a>
 </li>
 <li>
-    <a class='nav-link px-2 link-<?= $page == 'contact' ? "secondary" : "dark" ?>' href="contact.php">Nous contacter</a>
+    <a class='nav-link px-2 link-<?= $page == 'contact' ? "secondary" : "dark" ?>' href="../vue/contact.php">Nous contacter</a>
 </li>
 </ul>
-<a class="col-md-3 text-end" href="../vue/connexion.php"><button class='btn btn-outline-primary'>Login</button></a><a href="../vue/form_inscription_client.php"><button class='btn btn-primary'>Sign-up</button></a>
+<a class="col-md-3 text-end" href="../vue/connexion.php"><button class='btn btn-outline-primary'>Login</button></a><a href="../vue/form_inscription_client.php"><button class='btn btn-primary'>Logout</button></a>
   
     </header>
-    <main class="main">
-    <p>La boutique fut crée en aout 2010, un repère pour les antibois conquits par les fleurs et les plantes.</p>
-    <p><!--Quick presentation of the team-->
+    <main>
+    <div class="container py-4">
+        
+    <h5 class="card-tittle text-center text-secondary"> La boutique fut crée en aout 2010, un repère pour les antibois en quête de jolis bouquets et plantes.</h5>
+    
+    <!--Quick presentation of the team-->
         <ul>
             <li><strong>Fréderic</strong><br>
                 <img src="../assets/images/upload/frederic_ristorto.jpg" alt="Photo de Fréderic" width="320" height="250">
@@ -57,9 +60,11 @@ $page="equipe";
             Ce qui lui plait à Laëtitia c'est le pouvoir que les fleurs peuvent avoir sur les gens. <br> Lorsqu'elle commence à composer un bouquet dit-elle, elle ne sait jamais à quoi il va ressembler, elle l'agrémente, le faconne et à la fin il prend vie! Et provoque des coups de coeur chez nos des clients(e).
               </li>
         </ul>
+        
+    </div>
     </main>
     
     <?php include_once"../vue/footer.php";?>
  
-</body>
+    </body>
 </html>

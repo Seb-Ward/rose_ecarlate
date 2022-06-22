@@ -49,8 +49,10 @@ $page="boutique";
 
     </header>
     <main> 
-    <div class="container py-4">    
-    <div class="row row-cols-1 row-cols-md-3 mb-3 g-3 text-center">        
+    <div class="container py-4">  
+    <h5 class="card-tittle text-center text-secondary">Les indémodables</h5>  
+    <div class="row row-cols-1 row-cols-md-3 mb-3 g-3 text-center">    
+    
         <?php  
                 require "../model/produit.php";
                 foreach(getProduitPublish_boutique() as $produit){
