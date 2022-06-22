@@ -93,9 +93,15 @@ font-size: 1.2rem;
     align-items: flex-start;
     align-content: stretch;
 }
+.container{
+    max-width: 960px;
+    font-family: 'Times New Roman', Times, serif;
+}
 
-
-
+.produit-name{
+    font-size: 1.4em;
+    text-decoration: none;
+}
 
 #ajout
 {
@@ -106,17 +112,16 @@ font-size: 1.2rem;
     color: white;   
 }
 
-.blog-footer{
+footer{
     color: #727272;
     background: #f9f9f9;
-    padding: 2.5rem 0;
-    margin: 10px;
+   
     text-align:center;
-    border-top: .05rem solid #e5e5e5;
+    
 }
 #listing{
     width: 95vw;
-    height: 100vh;
+    height: auto;
     border:solid 1px gray;
     border-radius: 20px;
     margin: 0.5%;

@@ -20,14 +20,28 @@ $connected=true;
     <meta charset="UTF-8">
     <meta name="description" content="magasin de vente de fleur page liste des produits en bdd.">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap-5.1.3/dist/css/bootstrap.css">
+
 </head>
 <body>
-    <header class="header">
-    <h1 class="title-big">Rose écarlate</h1>
-    <br>
-    <h1>Liste des produits dans la base de données</h1>
-    <?php include_once "../vue/navigation.php";   ?>  
-
+<div class="container">
+            <header class="py-4 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between md-4 border-bottom">
+                <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0" href="/"><img width="" height="70" src="../assets/images/logo_fcomme_fleurs.jpg" alt=""></a>
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+<li>
+    <a class='nav-link px-2 link-<?= $page == 'accueil' ? "secondary" : "dark" ?>' href="accueil.php">Accueil</a>
+</li>
+<li>
+    <a class='nav-link px-2 link-<?= $page == 'boutique' ? "secondary" : "dark" ?>' href="boutique.php">Boutique</a>
+</li>
+<li>
+    <a class='nav-link px-2 link-<?= $page == 'equipe' ? "secondary" : "dark" ?>' href="equipe.php"> L'équipe</a>
+</li>
+<li>
+    <a class='nav-link px-2 link-<?= $page == 'contact' ? "secondary" : "dark" ?>' href="contact.php">Nous contacter</a>
+</li>
+</ul>
+<a class="col-md-3 text-end" href="../vue/connexion.php"><button class='btn btn-outline-primary'>Login</button></a><a href="../vue/form_inscription_client.php"><button class='btn btn-primary'>Sign-up</button></a>  
     </header>
     <main class="main"> 
     <div id="listing">
@@ -63,17 +77,15 @@ $connected=true;
             <td><button><a href="../vue/form_modification_produit.php?produit_id=<?=$produit->getProduit_id()?>">Modifier</a></button></td><!--Button to modifie the product. It will take the product_id and take me to form_modification_produit.php -->
             <td><button><a href="../controleur/suppression_produit.php?produit_id=<?=$produit->getProduit_id()?>">Suprimer</a></button></td><!--Button that will erase the product from the data base the listing and the shop with a process in suppression_produit.php -->
         </tr>
-        
-
         <?php }
          
         ?>
        
         </tbody>
     </table>
-   
+    </div>
     <button><a href="../vue/form_ajout_produit.php">Ajouter un nouveau produit</a></button>
-    </div><!--Here I have the possibility to add a new product to the data base, the listing product and the shop. By pressing on that switch it will take me to form_ajout_produit.php-->
+   <!--Here I have the possibility to add a new product to the data base, the listing product and the shop. By pressing on that switch it will take me to form_ajout_produit.php-->
     <br>
     <a href="../controleur/deconnexion.php"><button>Se déconnecter</button></a>
 
