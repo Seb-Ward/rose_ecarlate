@@ -88,7 +88,7 @@ $page="accueil";
             <div class="col <?=$produit->getProduit_id()?>">
             <div class="card shadow-sm">
             <a href="article.php?produit_id=<?=$produit->getProduit_id()?>" target="_blank">
-                <img src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>" alt="<?=$produit->getProduit_description()?>" width="100%" height="300">
+                <img src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>"class="rounded mx-auto d-block"  alt="<?=$produit->getProduit_description()?>" width="100%" height="300">
                 </a>
                <div class="card-body text-center">
                <a class="produit-name" href="article.php?produit_id=<?=$produit->getProduit_id()?>" target="_blank">

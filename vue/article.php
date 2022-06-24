@@ -57,7 +57,7 @@ $page="article";
     <main class="main">
         <div class="row">
     <div class="col-lg-6 col-xl-7 pt-4 order-2 order-lg-1">
-    <img src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>" alt="<?=$produit->getProduit_description()?>" width="400" height="400">  </div>
+    <img src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>" class="rounded mx-auto d-block"  alt="<?=$produit->getProduit_description()?>" width="400" height="400">  </div>
     <div class="col-lg-6 col-xl-5 pt-4 order-1 order-lg-2 ps-lg-5"> 
        <div class="sticky-top" style="top:100px"> 
     <h1 class="h2 mb-4"><?=$produit->getProduit_nom()?></h1>

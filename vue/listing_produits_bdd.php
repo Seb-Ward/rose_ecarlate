@@ -81,7 +81,7 @@ $connected=true;
             <td><?=$produit->getProduit_nom()?></td><!--extraction of my product_name using my function-->
             <td><?=substr($produit->getProduit_description(),0,200)?></td><!--extraction of my product_description using my function-->
             <td><?=$produit->getProduit_prix()?></td><!--extraction of my product_price using my function-->
-            <td><img src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>" alt="" width="100" height="100"></td><!--extraction of my image & image_id using my function-->
+            <td><img src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>" class="rounded mx-auto d-block"  alt="" width="100" height="100"></td><!--extraction of my image & image_id using my function-->
             <td><?=$produit->getProduit_publish_accueil()?></td>
             <td><?=$produit->getProduit_publish_boutique()?></td>
             <td><a class="btn btn-primary" href="../vue/form_modification_produit.php?produit_id=<?=$produit->getProduit_id()?>">Modifier</a></button></td><!--Button to modifie the product. It will take the product_id and take me to form_modification_produit.php -->
