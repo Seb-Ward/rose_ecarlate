@@ -41,12 +41,21 @@ $connected=true;
     <a class='nav-link px-2 link-<?= $page == 'contact' ? "secondary" : "dark" ?>' href="contact.php">Nous contacter</a>
 </li>
 </ul>
-<a class="col-md-3 text-end" href="../vue/connexion.php"><button class='btn btn-outline-primary'>Login</button></a><a href="../vue/form_inscription_client.php"><button class='btn btn-primary'>Sign-up</button></a>  
+<div class="dropdown col-md-3 text-end">
+                        <a class='btn btn-primary dropdown-toggle' href="../vue/dashboard.php" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Tableau de board</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="../vue/dashboard.php">test</a></li>
+                    </ul>
+                    </div>
+                        
+                        <a href="../controleur/deconnexion.php"><button class='btn btn-warning'>Logout</button></a>
+ 
     </header>
     <main class="main"> 
     <div id="listing">
        <h3>Listing</h3>
-        <table>
+       <div class="table-responsive">
+            <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Nom</th>
@@ -68,8 +77,8 @@ $connected=true;
             <td><?=$message->getMessage_email_expediteur()?></td>
             <td><?=$message->getMessage_telephone_expediteur()?></td>
             <td><?=$message->getMessage_text_expediteur()?></td>
-            <td><button><a href="mailto:<?=$message->getMessage_email_expediteur()?>?subject=Contact Rose-écarlate&body=Bonjour <?=($message->getMessage_genre_expediteur()==0?"Mme ":"Mr ").$message->getMessage_nom_expediteur()?>">Répondre à l'expéditeur</a></button></td>
-            <td><button><a href="../controleur/suppression_message.php?message_id=<?=$message->getMessage_id()?>">Suprimer</a></button></td>
+            <td><a class="btn btn-primary" href="mailto:<?=$message->getMessage_email_expediteur()?>?subject=Contact Rose-écarlate&body=Bonjour <?=($message->getMessage_genre_expediteur()==0?"Mme ":"Mr ").$message->getMessage_nom_expediteur()?>">Répondre</a></td>
+            <td><a class="btn btn-danger" href="../controleur/suppression_message.php?message_id=<?=$message->getMessage_id()?>">Suprimer</a></td>
         </tr>
         <?php }
         
@@ -78,9 +87,7 @@ $connected=true;
         </tbody>
     </table>
         </div>
-        <br>        
-        <a href="../controleur/deconnexion.php"><button>Se déconnecter</button></a>
-
+        </div>
     </main> 
     
     <?php include_once"../vue/footer.php";?>

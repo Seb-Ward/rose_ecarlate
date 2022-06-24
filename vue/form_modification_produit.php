@@ -39,7 +39,6 @@ $connected=true;
             <header class="py-4 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between md-4 border-bottom">
                 <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0" href="/"><img width="" height="70" src="../assets/images/logo_fcomme_fleurs.jpg" alt=""></a>
                 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <?php include_once "../vue/navigation.php";   ?>
 <li>
     <a class='nav-link px-2 link-<?= $page == 'accueil' ? "secondary" : "dark" ?>' href="accueil.php">Accueil</a>
 </li>
@@ -53,7 +52,14 @@ $connected=true;
     <a class='nav-link px-2 link-<?= $page == 'contact' ? "secondary" : "dark" ?>' href="contact.php">Nous contacter</a>
 </li>
 </ul>
-<a class="col-md-3 text-end" href="../vue/connexion.php"><button class='btn btn-outline-primary'>Login</button></a><a href="../vue/form_inscription_client.php"><button class='btn btn-primary'>Sign-up</button></a>  
+<div class="dropdown col-md-3 text-end">
+                        <a class='btn btn-primary dropdown-toggle' href="../vue/dashboard.php" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Tableau de board</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="../vue/dashboard.php">test</a></li>
+                    </ul>
+                    </div>
+                        <a href="../controleur/deconnexion.php"><button class='btn btn-warning'>Logout</button></a>
+  
     </header>
     <main class="main"> 
     <form action="../controleur/modification_produit_bdd.php" method="POST" enctype="multipart/form-data"><!--Here I use the $_POST method and the enctype="multipart/form-data"-->

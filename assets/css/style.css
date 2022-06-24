@@ -23,10 +23,7 @@ h3
 {
     color: gold;
 }
-table th
-{
-    color: black;
-}
+
 h3 ~ p ~ ul
 {
     color: black;
@@ -34,10 +31,6 @@ h3 ~ p ~ ul
 #title-equipe ~ p
 {
     color: black;
-}
-tr :nth-child(1n)
-{
-    background: lightgray
 }
 .header
 {
@@ -126,6 +119,4 @@ footer{
     margin: 0.5%;
     padding: 10px;
 }
-table{
-    width:100%;
-}
+
