@@ -35,32 +35,72 @@ $page="article";
 </head>
     <body>
         <div class="container">
-            <header class="py-4 d-flex flex-wrap align-items-center justify-content-center    justify-content-md-between md-4 border-bottom">
-                <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0" href="/"><img width="230" height="70" src="../assets/images/logo_fcomme_fleurs.jpg" alt=""></a>
-                    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                        <li>
-                            <a class='nav-link px-2 link-<?= $page == 'accueil' ? "secondary" : "dark" ?>' href="accueil.php">Accueil</a>
-                        </li>
-                        <li>
-                            <a class='nav-link px-2 link-<?= $page == 'boutique' ? "secondary" : "dark" ?>' href="boutique.php">Boutique</a>
-                        </li>
-                        <li>
-                            <a class='nav-link px-2 link-<?= $page == 'equipe' ? "secondary" : "dark" ?>' href="equipe.php"> L'équipe</a>
-                        </li>
-                        <li>
-                            <a class='nav-link px-2 link-<?= $page == 'contact' ? "secondary" : "dark" ?>' href="contact.php">Nous contacter</a>
-                        </li>
+        <header class="py-4 d-flex flex-wrap align-items-center justify-content-center  justify-content-md-between md-4 border-bottom">
+                <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0" href="accueil.php"><img width="230" height="70" src="../assets/images/logo_fcomme_fleurs.jpg" alt=""></a>
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+
+                    <li>
+                        <a class='nav-link px-2 link-<?= $page == 'accueil' ? "secondary" : "dark" ?>' href="../vue/accueil.php">Accueil</a>
+                    </li>
+                    <li>
+                        <a class='nav-link px-2 link-<?= $page == 'boutique' ? "secondary" : "dark" ?>' href="../vue/boutique.php">Boutique</a>
+                    </li>
+                    <li>
+                        <a class='nav-link px-2 link-<?= $page == 'equipe' ? "secondary" : "dark" ?>' href="../vue/equipe.php"> L'équipe</a>
+                    </li>
+                    <li>
+                        <a class='nav-link px-2 link-<?= $page == 'contact' ? "secondary" : "dark" ?>' href="../vue/contact.php">Nous contacter</a>
+                    </li>
                     </ul>
-                        <div class="col-md-3 text-end"><button class='btn btn-outline-primary me-2'>Login</button><button class='btn btn-primary'>Sign-up</button>
-                        </div>
-  
-                    </header>
+
+                    <?php
+                        if($connected==true){
+                            if($user->getAdmin()==1){
+
+                        
+                    ?> 
+                        <div class="dropdown col-md-3 text-end">
+                            <a class='btn btn-primary dropdown-toggle' href="../vue/dashboard.php" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Tableau de board</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="../vue/dashboard.php">dashboard</a></li>
+                                <li><a class="dropdown-item" href="../vue/listing_messages_recus.php">Consulter les messages</a></li>
+                                <li><a class="dropdown-item" href="../vue/listing_produits_bdd.php">Consulter les produits</a></li>
+                            </ul>
+                            </div>
+                        <?php }
+                        ?>
+                                <a href="../controleur/deconnexion.php"><button class='btn btn-warning'>Logout</button></a>
+                        <?php
+                        }else{
+
+                        ?>
+                                <a class="col-md-3 text-end" href="../vue/connexion.php"><button class='btn btn-outline-primary'>Login</button></a><a href="../vue/form_inscription_client.php"><button class='btn btn-primary'>Sign-up</button></a>
+
+                        <?php
+                        }
+                        ?>
+                    
+
+
+            </header>
                         <main class="main">
                             <div class="row">
-                                <div class="col-lg-6 col-xl-7 pt-4 order-2 order-lg-1">
-                                    <img src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>" class="rounded mx-auto d-block" alt="<?=$produit->getProduit_description()?>" width="400" height="400">  
+                            <div class="col-lg-7 pt-4 order-2 order-lg-1">
+                            <div class="row">
+                                <div class="d-none d-md-block col-md-2 pe-0">
+                                    <div class="owl-thumbs"data-slider-id="1">
+                                    <img class="img-fluid rounded mx-auto d-block mb-2" src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>"alt="<?=$produit->getProduit_description()?>">
+                                            <img class="img-fluid rounded mx-auto d-block mb-2" src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>"alt="<?=$produit->getProduit_description()?>">
+                                    </div>
+                                </div> 
+                                <div class="col-12 col-md-10 detail-carousel">
+                                <img src="../controleur/export_image.php?image_id=<?=$produit->getImage_id()?>" class="rounded mx-auto d-block" alt="<?=$produit->getProduit_description()?>" width="400" height="400">   
                                 </div>
-                                <div class="col-lg-6 col-xl-5 pt-4 order-1 order-lg-2 ps-lg-5"> 
+                                
+                                
+                                                            </div>
+                    </div> 
+                    <div class="col-lg-5 col-xl-4 pt-4 order-1 order-lg-2 ps-lg-4"> 
                                     <div class="sticky-top" style="top:100px"> 
                                         <h1 class="h2 mb-4"><?=$produit->getProduit_nom()?></h1>
                                             <div class="d-flex flex-column flex-sm-row align-items-sm-center mb-4 ">
@@ -82,9 +122,8 @@ $page="article";
                                                         </div>
                                                             <p class="mb-4 text-muted"><?=$produit->getProduit_description()?></p>
 
-  
-   
-                    </div> 
+                                                            </div>
+                                                            </div>
                 </div>
             </main>
     
