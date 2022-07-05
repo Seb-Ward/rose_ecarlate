@@ -37,21 +37,7 @@ $page="article";
         <div class="container">
         <header class="py-4 d-flex flex-wrap align-items-center justify-content-center  justify-content-md-between md-4 border-bottom">
                 <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0" href="accueil.php"><img width="230" height="70" src="../assets/images/logo_fcomme_fleurs.jpg" alt=""></a>
-                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-
-                    <li>
-                        <a class='nav-link px-2 link-<?= $page == 'accueil' ? "secondary" : "dark" ?>' href="../vue/accueil.php">Accueil</a>
-                    </li>
-                    <li>
-                        <a class='nav-link px-2 link-<?= $page == 'boutique' ? "secondary" : "dark" ?>' href="../vue/boutique.php">Boutique</a>
-                    </li>
-                    <li>
-                        <a class='nav-link px-2 link-<?= $page == 'equipe' ? "secondary" : "dark" ?>' href="../vue/equipe.php"> L'équipe</a>
-                    </li>
-                    <li>
-                        <a class='nav-link px-2 link-<?= $page == 'contact' ? "secondary" : "dark" ?>' href="../vue/contact.php">Nous contacter</a>
-                    </li>
-                    </ul>
+                
 
                     <?php
                         if($connected==true){
@@ -74,7 +60,7 @@ $page="article";
                         }else{
 
                         ?>
-                                <a class="col-md-3 text-end" href="../vue/connexion.php"><button class='btn btn-outline-primary'>Login</button></a><a href="../vue/form_inscription_client.php"><button class='btn btn-primary'>Sign-up</button></a>
+                                <a class="col-md-8 text-end" href="../vue/connexion.php"><button class='btn btn-outline-primary'>Login</button></a><a href="../vue/form_inscription_client.php"><button class='btn btn-primary'>Sign-up</button></a>
 
                         <?php
                         }
@@ -106,7 +92,7 @@ $page="article";
                                             <div class="d-flex flex-column flex-sm-row align-items-sm-center mb-4 ">
                                                 <form>
                                                     <div class="form-group row mb-4">  
-                                                        <label class="col-sm-2 col-form-label " for="quantity">Quantité:
+                                                        <label class="col-sm-3 col-form-label " for="quantity">Quantité:
 
                                                         </label>
                                                             <div class="col-sm-3">
@@ -118,7 +104,7 @@ $page="article";
                                                         </div>
                
 
-                                                            <a href="../vue/contact.php"><button class="btn btn-primary me-5">Commander</button></a><span class="h4 mt-2"><?=$produit->getProduit_prix()?>€</span></form> 
+                                                        <button class="btn btn me-5"><a href="../vue/contact.php">Commander</button></a><span class="h4 mt-2"><?=$produit->getProduit_prix()?>€</span></form> 
                                                         </div>
                                                             <p class="mb-4 text-muted"><?=$produit->getProduit_description()?></p>
 
@@ -126,6 +112,21 @@ $page="article";
                                                             </div>
                 </div>
             </main>
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+
+                    <li>
+                        <a class='nav-link px-2 link-<?= $page == 'accueil' ? "secondary" : "dark" ?>' href="../vue/accueil.php">Accueil</a>
+                    </li>
+                    <li>
+                        <a class='nav-link px-2 link-<?= $page == 'boutique' ? "secondary" : "dark" ?>' href="../vue/boutique.php">Boutique</a>
+                    </li>
+                    <li>
+                        <a class='nav-link px-2 link-<?= $page == 'equipe' ? "secondary" : "dark" ?>' href="../vue/equipe.php"> L'équipe</a>
+                    </li>
+                    <li>
+                        <a class='nav-link px-2 link-<?= $page == 'contact' ? "secondary" : "dark" ?>' href="../vue/contact.php">Nous contacter</a>
+                    </li>
+                    </ul>
     
             <?php include_once"../vue/footer.php";?>
 
